@@ -4,63 +4,12 @@
     <meta charset="UTF-8" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="roofpig_and_three.min.js"></script>
+    <title>Beginner's Method for Rubik's Cube</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <style>
-    .roofpig.custom {
-      width: var(--w) !important;
-      height: var(--h) !important;
-      margin-top: 20px !important;
-      margin-bottom: 60px !important;
-      background-color: #cc9;
-    }
+  <h1>Introduction</h1>
 
-    .cube-row {
-      display: flex;
-      gap: 30px;
-      align-items: flex-start;
-    }
-
-    .step {
-      display: grid;
-      grid-template-columns: 1fr 350px;
-      gap: 40px;
-      align-items: center;
-      margin-bottom: 50px;
-    }
-
-    .step-text {
-      font-size: 32px;
-    }
-
-    .step-cube {
-      display: flex;
-      justify-content: center;
-    }
-
-    .step-cubes {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0;
-    }
-
-    @media (max-width: 800px) {
-      .step {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-
-  <!--
-Scramble states:
-
-State 1: R U' F R2 D B' L2 U F' D2
-State 2: F2 U R' B L2 D' F U2 R B'
-State 3: R2 F' U L2 B D' R U' F2 L
-State 4: U' R2 F B' L D2 R' U F' B2
-State 5: L' U2 F R2 D B' U R' F2 D'
-State 6: B2 R U' L F2 D' B R2 U F'
--->
+  <p>To solve the cube</p>
 
   <h1>The White Cross</h1>
   <div class="step">
@@ -155,7 +104,7 @@ State 6: B2 R U' L F2 D' B R2 U F'
       <p>
         then, rotate the cube so the edge's white color is on the Face side.
       </p>
-      <p>Use R' F' R F or L F L' F' to bring the corner Up side.</p>
+      <p>Use R F' R' F or L' F L F' to bring the corner Up side.</p>
     </div>
     <div class="stepcubes">
       <div class="step-cube">
@@ -181,8 +130,12 @@ State 6: B2 R U' L F2 D' B R2 U F'
         If it is at the top layer with its white side not facing up side or down
         side,
       </p>
-      <p>bring it down by F D' F',</p>
-      <p>then use R' F' R F or L F L' F' as above.</p>
+      <p>bring it down by F' D' F or F D F',</p>
+      <p>
+        then, match the edge with its center piece and rotate the cube so the
+        white color of the edge is on the Face side,
+      </p>
+      <p>then use R F' R' F or L' F L F' as above.</p>
     </div>
     <div class="step-cube">
       <div

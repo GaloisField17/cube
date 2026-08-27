@@ -1,0 +1,43 @@
+.roofpig.custom {
+  width: var(--w) !important;
+  height: var(--h) !important;
+  margin-top: 20px !important;
+  margin-bottom: 60px !important;
+  background-color: #cc9;
+}
+
+.cube-row {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.step-text {
+  font-size: 32px;
+}
+
+.step-cube {
+  display: flex;
+  justify-content: center;
+}
+
+.step-cubes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+@media (max-width: 800px) {
+  .step {
+    grid-template-columns: 1fr;
+  }
+}

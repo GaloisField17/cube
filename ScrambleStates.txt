@@ -1,0 +1,6 @@
+State 1: R U' F R2 D B' L2 U F' D2
+State 2: F2 U R' B L2 D' F U2 R B'
+State 3: R2 F' U L2 B D' R U' F2 L
+State 4: U' R2 F B' L D2 R' U F' B2
+State 5: L' U2 F R2 D B' U R' F2 D'
+State 6: B2 R U' L F2 D' B R2 U F'
