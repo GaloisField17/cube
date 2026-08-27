@@ -7,175 +7,200 @@
     <title>Beginner's Method for Rubik's Cube</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <h1>Introduction</h1>
-
-  <p>To solve the cube</p>
-
-  <h1>The White Cross</h1>
-  <div class="step">
-    <div class="step-text">
-      <p>
-        We want to form a white cross where white edges match with the center
-        pieces.
-      </p>
-    </div>
-    <div class="step-cube">
-      <div
-        class="roofpig custom"
-        style="--w: 300px; --h: 300px"
-        data-config="setupmoves=U|colored=D*/e */m|pov=Dbr|hover=far"
-      ></div>
-    </div>
-  </div>
-  <div class="step">
-    <div class="step-text">
-      <p>Rotate the white center Up side.</p>
-    </div>
-
-    <div class="step-cube">
-      <div
-        class="roofpig custom"
-        style="--w: 300px; --h: 300px"
-        data-config="setupmoves=U|alg=x2|colored=*/m|hover=far"
-      ></div>
-    </div>
-  </div>
-  <h2>Example: Edge Matches With Center</h2>
-  <div class="step">
-    <div class="step-text">
-      <p>Bring the white edge up by rotating the Right side.</p>
-    </div>
-
-    <div class="step-cube">
-      <div
-        class="roofpig custom"
-        style="--w: 300px; --h: 300px"
-        data-config="setupmoves=R U' F R2 D B' L2 U F' D2 D' B R|alg=R|colored=Dr Rd */m|pov=Dbr|hover=far"
-      ></div>
-    </div>
-  </div>
-  <h2>Example: Missing White Edge Would Disrupt Solved Cross Pieces</h2>
-
-  <div class="step">
-    <div class="step-text">
-      <p>
-        Place the missing white edge on the Middle layer by rotating Face side.
-      </p>
-      <p>
-        To preserve the solved white pieces, rotate the Up side so the unsolved
-        (gray) pieces line with the missing white edge.
-      </p>
-      <p>Then, bring the missing white edge up by rotating Right side.</p>
-      <p>Finally, rotate Up side to match edges with centers.</p>
-    </div>
-
-    <div class="step-cube">
-      <div
-        class="roofpig custom"
-        style="--w: 300px; --h: 300px"
-        data-config="setupmoves=R U' F R2 D B' L2 U F' D2 D' B R2 D B' D R2 U R B B' D' R D|alg=B' D' R D|colored=D*/e */m|pov=Dbr|hover=far|speed=900"
-      ></div>
-    </div>
-  </div>
-
-  <h1>The White Corners</h1>
-
-  <div class="step">
-    <div class="step-text">
-      <p>We want to complete the layer with the white center.</p>
-    </div>
-    <div class="step-cube">
-      <div
-        class="roofpig custom"
-        style="--w: 300px; --h: 300px"
-        data-config="colored=D* */m|pov=Dbr|hover=far"
-      ></div>
-    </div>
-  </div>
-  <h2>Example: White Corner's White Side Is Not Facing Up Side or Down Side</h2>
-
-  <div class="step">
-    <div class="step-text">
-      <p>
-        If an unmatched white corner is at the bottom layer with its white side
-        not facing up side or down side,
-      </p>
-      <p>first match its neighbour with its center by rotating Down side,</p>
-      <p>
-        then, rotate the cube so the edge's white color is on the Face side.
-      </p>
-      <p>Use R F' R' F or L' F L F' to bring the corner Up side.</p>
-    </div>
-    <div class="stepcubes">
-      <div class="step-cube">
-        <div
-          class="roofpig custom"
-          style="--w: 300px; --h: 300px"
-          data-config="setupmoves=R' L U L' U2 R U2 U' R B' R' B|alg= U' y R B' R' B|colored=D*/e D*/m */m Dbl Bdl|tweaks=X:Dbl x:Bdl x:B|pov=Dbr|hover=far|speed=900"
-        ></div>
+  <body>
+    <header>
+      <h1>Beginner's Method for Solving the 3x3 Rubik's Cube</h1>
+    </header>
+    <main>
+      <h1>Introduction</h1>
+      <p>To solve the cube, we will follow the 6 steps below:</p>
+      <ol>
+        <li>The White Cross</li>
+        <li>The White Corners</li>
+        <li>The Second Layer</li>
+        <li>The Yellow Cross</li>
+        <li>
+          The Yellow Corners
+          <ol type="a">
+            <li>Solving The Yellow Face</li>
+            <li>Solving The Yellow Corners</li>
+          </ol>
+        </li>
+        <li>The Yellow Edges</li>
+      </ol>
+      <h1>The White Cross</h1>
+      <div class="step">
+        <div class="step-text">
+          <p>
+            We want to form a white cross where white edges match with the
+            center pieces.
+          </p>
+        </div>
+        <div class="step-cube">
+          <div
+            class="roofpig custom"
+            style="--w: 300px; --h: 300px"
+            data-config="setupmoves=U|colored=D*/e */m|pov=Dbr|hover=far"
+          ></div>
+        </div>
       </div>
-      <div class="step-cube">
-        <div
-          class="roofpig custom"
-          style="--w: 300px; --h: 300px"
-          data-config="setupmoves=B U2' B' U2 B' R B R'|alg= U B' R B R'|colored=D*/e */m Dbr Bdr|tweaks=X:Dbr x:Bdr x:B|pov=Dbr|hover=far|speed=900"
-        ></div>
+      <div class="step">
+        <div class="step-text">
+          <p>Start by rotating the white center Up side.</p>
+        </div>
+
+        <div class="step-cube">
+          <div
+            class="roofpig custom"
+            style="--w: 300px; --h: 300px"
+            data-config="setupmoves=U|alg=x2|colored=*/m|hover=far"
+          ></div>
+        </div>
       </div>
-    </div>
-  </div>
+      <h2>Example: Edge Matches With Center</h2>
+      <div class="step">
+        <div class="step-text">
+          <p>Bring the white edge up by rotating the Right side.</p>
+        </div>
 
-  <div class="step">
-    <div class="step-text">
-      <p>
-        If it is at the top layer with its white side not facing up side or down
-        side,
-      </p>
-      <p>bring it down by F' D' F or F D F',</p>
-      <p>
-        then, match the edge with its center piece and rotate the cube so the
-        white color of the edge is on the Face side,
-      </p>
-      <p>then use R F' R' F or L' F L F' as above.</p>
-    </div>
-    <div class="step-cube">
-      <div
-        class="roofpig custom"
-        style="--w: 300px; --h: 300px"
-        data-config="setupmoves=R' L U L' U2 R U2 R B' R' B R' U' R|alg=R' U' R|colored=D*/e D*/m */m Dbl|tweaks=X:Dbl|pov=Dbr|hover=far|speed=900"
-      ></div>
-    </div>
-  </div>
+        <div class="step-cube">
+          <div
+            class="roofpig custom"
+            style="--w: 300px; --h: 300px"
+            data-config="setupmoves=R U' F R2 D B' L2 U F' D2 D' B R|alg=R|colored=Dr Rd */m|pov=Dbr|hover=far"
+          ></div>
+        </div>
+      </div>
+      <h2>Example: Missing White Edge Would Disrupt Solved Cross Pieces</h2>
 
-  <h2>Example: White Corner's White Side Is Facing Up Side or Down Side</h2>
+      <div class="step">
+        <div class="step-text">
+          <p>
+            Place the missing white edge on the Middle layer by rotating Face
+            side.
+          </p>
+          <p>
+            To preserve the solved white pieces, rotate the Up side so the
+            unsolved (gray) pieces line with the missing white edge.
+          </p>
+          <p>Then, bring the missing white edge up by rotating Right side.</p>
+          <p>Finally, rotate Up side to match edges with centers.</p>
+        </div>
 
-  <div class="step">
-    <div class="step-text">
-      <p>If it is facing Up side, similarly as previous step,</p>
-      <p>bring it down to the bottom layer by using F D F'.</p>
-      <p>Then use R' F' R F or L F L' F' to bring it on the Up side.</p>
-    </div>
-    <div class="step-cube">
-      <div
-        class="roofpig custom"
-        style="--w: 300px; --h: 300px"
-        data-config="setupmoves=F' U' F R B' R' B R' U' R|alg=R' U' R|colored=D*/e */m Dfr Rdf Fdr|tweaks=X:Dfr|pov=Dbr|hover=far|speed=900"
-      ></div>
-    </div>
-  </div>
-  <div class="step">
-    <div class="step-text">
-      <p>
-        If it's facing Down side, bring it down up to the bottom layer by using
-        F D' F'.
-      </p>
-      <p>Then use R' F' R F or L F L' F' to bring it on the Up side.</p>
-    </div>
-    <div class="step-cube">
-      <div
-        class="roofpig custom"
-        style="--w: 300px; --h: 300px"
-        data-config="setupmoves=L U L' U' L U' L' R U' R'|alg=R U' R'|colored=D*/e */m Dbl Bdl Luf |tweaks=X:Dbl|pov=Dbr|hover=far|speed=900"
-      ></div>
-    </div>
-  </div>
+        <div class="step-cube">
+          <div
+            class="roofpig custom"
+            style="--w: 300px; --h: 300px"
+            data-config="setupmoves=R U' F R2 D B' L2 U F' D2 D' B R2 D B' D R2 U R B B' D' R D|alg=B' D' R D|colored=D*/e */m|pov=Dbr|hover=far|speed=900"
+          ></div>
+        </div>
+      </div>
+
+      <h1>The White Corners</h1>
+
+      <div class="step">
+        <div class="step-text">
+          <p>We want to complete the layer with the white center.</p>
+        </div>
+        <div class="step-cube">
+          <div
+            class="roofpig custom"
+            style="--w: 300px; --h: 300px"
+            data-config="colored=D* */m|pov=Dbr|hover=far"
+          ></div>
+        </div>
+      </div>
+      <h2>
+        Example: White Corner's White Side Is Not Facing Up Side or Down Side
+      </h2>
+
+      <div class="step">
+        <div class="step-text">
+          <p>
+            If an unmatched white corner is at the bottom layer with its white
+            side not facing up side or down side,
+          </p>
+          <p>
+            first match its neighbour with its center by rotating Down side,
+          </p>
+          <p>
+            then, rotate the cube so the edge's white color is on the Face side.
+          </p>
+          <p>Use R F' R' F or L' F L F' to bring the corner Up side.</p>
+        </div>
+        <div class="stepcubes">
+          <div class="step-cube">
+            <div
+              class="roofpig custom"
+              style="--w: 300px; --h: 300px"
+              data-config="setupmoves=R' L U L' U2 R U2 U' R B' R' B|alg= U' y R B' R' B|colored=D*/e D*/m */m Dbl Bdl|tweaks=X:Dbl x:Bdl x:B|pov=Dbr|hover=far|speed=900"
+            ></div>
+          </div>
+          <div class="step-cube">
+            <div
+              class="roofpig custom"
+              style="--w: 300px; --h: 300px"
+              data-config="setupmoves=B U2' B' U2 B' R B R'|alg= U B' R B R'|colored=D*/e */m Dbr Bdr|tweaks=X:Dbr x:Bdr x:B|pov=Dbr|hover=far|speed=900"
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-text">
+          <p>
+            If it is at the top layer with its white side not facing up side or
+            down side,
+          </p>
+          <p>bring it down by F' D' F or F D F',</p>
+          <p>
+            then, match the edge with its center piece and rotate the cube so
+            the white color of the edge is on the Face side,
+          </p>
+          <p>then use R F' R' F or L' F L F' as above.</p>
+        </div>
+        <div class="step-cube">
+          <div
+            class="roofpig custom"
+            style="--w: 300px; --h: 300px"
+            data-config="setupmoves=R' L U L' U2 R U2 R B' R' B R' U' R|alg=R' U' R|colored=D*/e D*/m */m Dbl|tweaks=X:Dbl|pov=Dbr|hover=far|speed=900"
+          ></div>
+        </div>
+      </div>
+
+      <h2>Example: White Corner's White Side Is Facing Up Side or Down Side</h2>
+
+      <div class="step">
+        <div class="step-text">
+          <p>If it is facing Up side, similarly as previous step,</p>
+          <p>bring it down to the bottom layer by using F D F'.</p>
+          <p>Then use R' F' R F or L F L' F' to bring it on the Up side.</p>
+        </div>
+        <div class="step-cube">
+          <div
+            class="roofpig custom"
+            style="--w: 300px; --h: 300px"
+            data-config="setupmoves=F' U' F R B' R' B R' U' R|alg=R' U' R|colored=D*/e */m Dfr Rdf Fdr|tweaks=X:Dfr|pov=Dbr|hover=far|speed=900"
+          ></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-text">
+          <p>
+            If it's facing Down side, bring it down up to the bottom layer by
+            using F D' F'.
+          </p>
+          <p>Then use R' F' R F or L F L' F' to bring it on the Up side.</p>
+        </div>
+        <div class="step-cube">
+          <div
+            class="roofpig custom"
+            style="--w: 300px; --h: 300px"
+            data-config="setupmoves=L U L' U' L U' L' R U' R'|alg=R U' R'|colored=D*/e */m Dbl Bdl Luf |tweaks=X:Dbl|pov=Dbr|hover=far|speed=900"
+          ></div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
 </html>

@@ -1,3 +1,12 @@
+header,
+footer {
+  background: #0b1120;
+  color: #fff;
+  padding: 32px;
+}
+main {
+  font-size: 1.5em;
+}
 .roofpig.custom {
   width: var(--w) !important;
   height: var(--h) !important;
@@ -15,13 +24,14 @@
 .step {
   display: grid;
   grid-template-columns: 1fr 350px;
-  gap: 40px;
+  gap: 20px;
   align-items: center;
   margin-bottom: 50px;
+  line-height: 1.3;
 }
 
 .step-text {
-  font-size: 32px;
+  zoom: 1.5;
 }
 
 .step-cube {
