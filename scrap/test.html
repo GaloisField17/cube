@@ -1,0 +1,95 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="roofpig_and_three.min.js"></script>
+
+<style>
+  .roofpig.custom {
+    width: var(--w) !important;
+    height: var(--h) !important;
+    margin-top: 20px !important;
+    margin-bottom: 60px !important;
+    background-color: #cc9;
+  }
+
+  .cube-row {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+  }
+</style>
+
+<!--
+Scramble states:
+
+State 1: R U' F R2 D B' L2 U F' D2
+State 2: F2 U R' B L2 D' F U2 R B'
+State 3: R2 F' U L2 B D' R U' F2 L
+State 4: U' R2 F B' L D2 R' U F' B2
+State 5: L' U2 F R2 D B' U R' F2 D'
+State 6: B2 R U' L F2 D' B R2 U F'
+-->
+
+<h1>The White Cross</h1>
+
+At the end of this step our cube will look like on the right.
+
+<h2>Rotate White Center Up</h2>
+
+<div
+  class="roofpig custom"
+  style="--w: 300px; --h: 300px"
+  data-config="alg=x2|colored=*/m|hover=far"
+></div>
+
+<h2>Example: Edge Matches With Center</h2>
+
+<p style="font-size: 32px">
+  Bring the white edge up by rotating the Right side.
+</p>
+
+<div class="cube-row">
+  <div
+    class="roofpig custom"
+    style="--w: 300px; --h: 300px"
+    data-config="setupmoves=R U' F R2 D B' L2 U F' D2 D' B R|alg=R|colored=Dr Rd */m|pov=Dbr|hover=far"
+  ></div>
+
+  <div
+    class="roofpig custom"
+    style="--w: 300px; --h: 300px"
+    data-config="setupmoves=R U' F R2 D B' L2 U F' D2 D' B R|alg=R2|colored=Dr Rd */m|pov=Dbr|hover=far"
+  ></div>
+</div>
+
+<h2>Example: Missing White Edge Would Disrupt Solved Cross Pieces</h2>
+
+<p style="font-size: 32px">
+  Place the missing white edge on the Middle layer by rotating Face side.
+</p>
+
+<p style="font-size: 32px">
+  To preserve the solved white pieces, rotate the Up side so the unsolved (gray)
+  pieces line with the missing white edge.
+</p>
+
+<p style="font-size: 32px">
+  Then, bring the missing white edge up by rotating Right side.
+</p>
+<p style="font-size: 32px">
+  Finally, rotate Up side to match edges with centers.
+</p>
+
+<div class="cube-row">
+  <div
+    class="roofpig custom"
+    style="--w: 300px; --h: 300px"
+    data-config="setupmoves=R U' F R2 D B' L2 U F' D2 D' B R2 D B' D R2 U R D' R D|alg=D' R D|colored=D*/e */m|pov=Dbr|hover=far|speed=900"
+  ></div>
+
+  <div
+    class="roofpig custom"
+    style="--w: 300px; --h: 300px"
+    data-config="setupmoves=R U' F R2 D B' L2 U F' D2 D' B R2 D B' D R2 U R B B' D' R D|alg=B' D' R D|colored=D*/e */m|pov=Dbr|hover=far|speed=900"
+  ></div>
+</div>
+
+<h1>The White Corners</h1>
