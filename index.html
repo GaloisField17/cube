@@ -13,22 +13,22 @@
     </header>
     <main>
       <h1>Introduction</h1>
-      <p>To solve the cube, we will follow the 6 steps below:</p>
+      <p>To solve the cube, we will divide our journey in to 6 steps.</p>
       <ol>
-        <li>The White Cross</li>
-        <li>The White Corners</li>
-        <li>The Second Layer</li>
-        <li>The Yellow Cross</li>
+        <li><a href="#white-cross">The White Cross</a></li>
+        <li><a href="#white-corners">The White Corners</a></li>
+        <li><a href="#second-layer">The Second Layer</a></li>
+        <li><a href="#">The Yellow Cross</a></li>
         <li>
-          The Yellow Corners
+          <a href="#">The Yellow Corners</a>
           <ol type="a">
-            <li>Solving The Yellow Face</li>
-            <li>Solving The Yellow Corners</li>
+            <li><a href="#">Solving The Yellow Face</a></li>
+            <li><a href="#">Solving The Yellow Corners</a></li>
           </ol>
         </li>
-        <li>The Yellow Edges</li>
+        <li><a href="#">The Yellow Edges</a></li>
       </ol>
-      <h1>The White Cross</h1>
+      <h1 id="white-cross">The White Cross</h1>
       <div class="step">
         <div class="step-text">
           <p>
@@ -40,7 +40,7 @@
           <div
             class="roofpig custom"
             style="--w: 300px; --h: 300px"
-            data-config="setupmoves=U|colored=D*/e */m|pov=Dbr|hover=far"
+            data-config="setupmoves=U|colored=D*/e */m|pov=Dbr|hover=far|speed=900"
           ></div>
         </div>
       </div>
@@ -53,7 +53,7 @@
           <div
             class="roofpig custom"
             style="--w: 300px; --h: 300px"
-            data-config="setupmoves=U|alg=x2|colored=*/m|hover=far"
+            data-config="setupmoves=U|alg=x2|colored=*/m|hover=far|speed=900"
           ></div>
         </div>
       </div>
@@ -67,7 +67,7 @@
           <div
             class="roofpig custom"
             style="--w: 300px; --h: 300px"
-            data-config="setupmoves=R U' F R2 D B' L2 U F' D2 D' B R|alg=R|colored=Dr Rd */m|pov=Dbr|hover=far"
+            data-config="setupmoves=R U' F R2 D B' L2 U F' D2 D' B R|alg=R|colored=Dr Rd */m|pov=Dbr|hover=far|speed=900"
           ></div>
         </div>
       </div>
@@ -96,17 +96,20 @@
         </div>
       </div>
 
-      <h1>The White Corners</h1>
+      <h1 id="white-corners">The White Corners</h1>
 
       <div class="step">
         <div class="step-text">
-          <p>We want to complete the layer with the white center.</p>
+          <p>
+            We want solve the white corners, which will complete the layer with
+            the white center.
+          </p>
         </div>
         <div class="step-cube">
           <div
             class="roofpig custom"
             style="--w: 300px; --h: 300px"
-            data-config="colored=D* */m|pov=Dbr|hover=far"
+            data-config="colored=D* */m|pov=Dbr|hover=far|speed=900"
           ></div>
         </div>
       </div>
@@ -197,6 +200,104 @@
             class="roofpig custom"
             style="--w: 300px; --h: 300px"
             data-config="setupmoves=L U L' U' L U' L' R U' R'|alg=R U' R'|colored=D*/e */m Dbl Bdl Luf |tweaks=X:Dbl|pov=Dbr|hover=far|speed=900"
+          ></div>
+        </div>
+      </div>
+      <h1 id="second-layer">The Second Layer</h1>
+
+      <div class="step">
+        <div class="step-text">
+          <p>We want finish solving the second layer.</p>
+        </div>
+        <div class="step-cube">
+          <div
+            class="roofpig custom"
+            style="--w: 300px; --h: 300px"
+            data-config="colored=U- U|hover=far|speed=900"
+          ></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-text">
+          <p>Rotate the yellow center Up side.</p>
+        </div>
+
+        <div class="step-cube">
+          <div
+            class="roofpig custom"
+            style="--w: 300px; --h: 300px"
+            data-config="setupmoves=|alg=x2|colored=D* */m|pov=Dbr|hover=far|speed=900"
+          ></div>
+        </div>
+      </div>
+      <h2>Example: There Is An Edge In Up Side With No Yellow On It</h2>
+      <div class="step">
+        <div class="step-text">
+          <p>
+            If there is an edge with no yellow in it, match the edge with its
+            center by rotating Up side and rotate the cube so this edge is on
+            the Face side.
+          </p>
+        </div>
+
+        <div class="step-cube">
+          <div
+            class="roofpig custom"
+            style="--w: 300px; --h: 300px"
+            data-config="setupmoves=L' U L U F U' F' U2 U|alg=U|pov=Ufl|colored=D* */m Lf Fl|tweaks=X:Lf X:L x:Fl x:F|hover=far|speed=900"
+          ></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-text">
+          <p>
+            Its color on the Up side determines which side it will go in to.
+          </p>
+          <p>
+            In this case, it's red, and the red center is on the Right side.
+            Thus, the edge will go in the Right side.
+          </p>
+          <p>So, use the Right Algorithm as follows:</p>
+          <p style="text-align: center">
+            U R U' R'&nbsp;&nbsp;&nbsp;U' F' U F.
+          </p>
+          <p>Otherwise, use the Left Algorithm.</p>
+          <p style="text-align: center">
+            U' L' U L&nbsp;&nbsp;&nbsp;U F U' F'.
+          </p>
+        </div>
+        <div class="stepcubes">
+          <div class="step-cube">
+            <div
+              class="roofpig custom"
+              style="--w: 300px; --h: 300px"
+              data-config="setupmoves=L' U L U F U' F' U2 U U F U' F' U' L' U L|alg=U F U' F' U' L' U L|pov=Ufl|colored=D* */m Lf Fl|tweaks=X:Lf X:L x:Fl x:F|hover=far|speed=900"
+            ></div>
+          </div>
+          <div class="step-cube">
+            <div
+              class="roofpig custom"
+              style="--w: 300px; --h: 300px"
+              data-config="setupmoves=B' U B U L U' L' U2 U' B' U B U L U' L'|alg= U' B' U B U L U' L'|colored=D* */m Lb Bl|tweaks=X:Bl X:B x:Lb x:L|pov=Ufl|hover=far|speed=900"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <h2>Example: Every Edge In Up Side With Has Yellow On It</h2>
+      <div class="step">
+        <div class="step-text">
+          <p>
+            If every edge on the Up side has yellow on it, use either the Right,
+            or the Left algorithm on the side of an unsolved edge to bring it on
+            the Up side.
+          </p>
+        </div>
+
+        <div class="step-cube">
+          <div
+            class="roofpig custom"
+            style="--w: 300px; --h: 300px"
+            data-config="setupmoves=U R U' R' U' F' U F U2 U R U' R' U' F' U F U R U' R' U' F' U F|alg=U R U' R' U' F' U F|colored=D* */m Fr Rf|solved=U*/c U*/e|hover=far|speed=900"
           ></div>
         </div>
       </div>
