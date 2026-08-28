@@ -13,21 +13,34 @@
     </header>
     <main>
       <h1>Introduction</h1>
-      <p>To solve the cube, we will divide our journey in to 6 steps.</p>
-      <ol>
-        <li><a href="#white-cross">The White Cross</a></li>
-        <li><a href="#white-corners">The White Corners</a></li>
-        <li><a href="#second-layer">The Second Layer</a></li>
-        <li><a href="#">The Yellow Cross</a></li>
-        <li>
-          <a href="#">The Yellow Corners</a>
-          <ol type="a">
-            <li><a href="#">Solving The Yellow Face</a></li>
-            <li><a href="#">Solving The Yellow Corners</a></li>
+      <div class="step">
+        <div class="step-text">
+          <p>To solve the cube, we will divide our journey in to 6 steps.</p>
+          <ol>
+            <li><a href="#white-cross">The White Cross</a></li>
+            <li><a href="#white-corners">The White Corners</a></li>
+            <li><a href="#second-layer">The Second Layer</a></li>
+            <li><a href="#">The Yellow Cross</a></li>
+            <li>
+              <a href="#">The Yellow Corners</a>
+              <ol type="a">
+                <li><a href="#">Solving The Yellow Face</a></li>
+                <li><a href="#">Solving The Yellow Corners</a></li>
+              </ol>
+            </li>
+            <li><a href="#">The Yellow Edges</a></li>
           </ol>
-        </li>
-        <li><a href="#">The Yellow Edges</a></li>
-      </ol>
+        </div>
+        <div class="step-cube">
+          <div
+            id="intro-cube"
+            class="roofpig"
+            style="width: 200px; height: 200px"
+            data-config="setupmoves=|alg=y2 x2 x2 y2|hover=none|speed=900"
+          ></div>
+        </div>
+      </div>
+
       <h1 id="white-cross">The White Cross</h1>
       <div class="step">
         <div class="step-text">
@@ -39,7 +52,7 @@
         <div class="step-cube">
           <div
             class="roofpig custom"
-            style="--w: 300px; --h: 300px"
+            style="--w: 300px; --h: 300px; background-color: #b0ccd6"
             data-config="flags=canvas|setupmoves=U|colored=D*/e */m|pov=Dbr|hover=far|speed=900"
           ></div>
         </div>
@@ -76,8 +89,8 @@
       <div class="step">
         <div class="step-text">
           <p>
-            Place the missing white edge on the Middle layer by rotating Face
-            side.
+            Place the missing white edge right or left of the middle piece of
+            the same side by rotating Face side.
           </p>
           <p>
             To preserve the solved white pieces, rotate the Up side so the
@@ -108,7 +121,7 @@
         <div class="step-cube">
           <div
             class="roofpig custom"
-            style="--w: 300px; --h: 300px"
+            style="--w: 300px; --h: 300px; background-color: #b0ccd6"
             data-config="colored=D* */m|pov=Dbr|hover=far|speed=900"
           ></div>
         </div>
@@ -121,13 +134,14 @@
         <div class="step-text">
           <p>
             If an unmatched white corner is at the bottom layer with its white
-            side not facing up side or down side,
+            side not facing Up side or Down side,
           </p>
           <p>
             first match its neighbour with its center by rotating Down side,
           </p>
           <p>
-            then, rotate the cube so the edge's white color is on the Face side.
+            then, rotate the cube so the corner's white color is on the Face
+            side.
           </p>
           <p>Use R F' R' F or L' F L F' to bring the corner Up side.</p>
         </div>
@@ -212,7 +226,7 @@
         <div class="step-cube">
           <div
             class="roofpig custom"
-            style="--w: 300px; --h: 300px"
+            style="--w: 300px; --h: 300px; background-color: #b0ccd6"
             data-config="colored=U- U|hover=far|speed=900"
           ></div>
         </div>
@@ -278,7 +292,7 @@
             <div
               class="roofpig custom"
               style="--w: 300px; --h: 300px"
-              data-config="setupmoves=B' U B U L U' L' U2 U' B' U B U L U' L'|alg= U' B' U B U L U' L'|colored=D* */m Lb Bl|tweaks=X:Bl X:B x:Lb x:L|pov=Ufl|hover=far|speed=900"
+              data-config="setupmoves=L U L' U' B' U' B U U' B' U B U L U' L'|alg=U' B' U B U L U' L'|pov=Ufl|colored=D* */m Lb Bl|tweaks=X:Lb X:L x:Bl x:B|hover=far|speed=900"
             ></div>
           </div>
         </div>
@@ -302,6 +316,12 @@
         </div>
       </div>
     </main>
-    <footer></footer>
+    <footer>
+      <div style="text-align: right">
+        <a href="https://github.com/GaloisField17/cube" style="color: pink">
+          GitHub
+        </a>
+      </div>
+    </footer>
   </body>
 </html>
