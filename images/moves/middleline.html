@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+  <body>
+    <!-- Your entire SVG goes here -->
+    <svg
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      width="150"
+      height="150"
+      viewBox="-0.9 -0.9 1.8 1.8"
+    >
+      <!-- ... all your existing polygons ... -->
+
+      <polygon
+        id="polygon1"
+        fill="red"
+        stroke="#000000"
+        points="-0.24139184674777,0.17285724590871 -0.019572311898468,0.30784588369658 -0.019572311898468,0.55797056444244 -0.23259915514016,0.41793843736221"
+      />
+
+      <line
+        id="line1"
+        fill="none"
+        stroke="#000000"
+        stroke-width="0.01"
+        x1="-0.24139184674777"
+        y1="0.17285724590871"
+        x2="-0.019572311898468"
+        y2="0.55797056444244"
+      />
+
+      <line
+        id="line2"
+        fill="none"
+        stroke="#000000"
+        stroke-width="0.01"
+        x1="-0.019572311898468"
+        y1="0.30784588369658"
+        x2="-0.23259915514016"
+        y2="0.41793843736221"
+      />
+    </svg>
+
+    <script>
+      // ============================================================
+      // GET CENTER OF AN SVG LINE
+      // ============================================================
+
+      function getLineCenter(lineId) {
+        const line = document.getElementById(lineId);
+
+        if (!line) {
+          console.error("Line not found:", lineId);
+          return null;
+        }
+
+        const x1 = Number(line.getAttribute("x1"));
+        const y1 = Number(line.getAttribute("y1"));
+        const x2 = Number(line.getAttribute("x2"));
+        const y2 = Number(line.getAttribute("y2"));
+
+        return {
+          x: (x1 + x2) / 2,
+          y: (y1 + y2) / 2,
+        };
+      }
+
+      // ============================================================
+      // GET CENTER OF A 4-POINT SVG POLYGON
+      // The center is where the two diagonal lines intersect.
+      // ============================================================
+
+      function getPolygonCenter(polygonId) {
+        const polygon = document.getElementById(polygonId);
+
+        if (!polygon) {
+          console.error("Polygon not found:", polygonId);
+          return null;
+        }
+
+        const coords = polygon
+          .getAttribute("points")
+          .trim()
+          .split(/[\s,]+/)
+          .map(Number);
+
+        if (coords.length !== 8) {
+          console.error("Polygon must have exactly 4 points (8 coordinates).");
+          return null;
+        }
+
+        const p1 = {
+          x: coords[0],
+          y: coords[1],
+        };
+
+        const p2 = {
+          x: coords[2],
+          y: coords[3],
+        };
+
+        const p3 = {
+          x: coords[4],
+          y: coords[5],
+        };
+
+        const p4 = {
+          x: coords[6],
+          y: coords[7],
+        };
+
+        // Diagonal 1: p1 → p3
+        // Diagonal 2: p2 → p4
+
+        return getLineIntersection(p1, p3, p2, p4);
+      }
+
+      // ============================================================
+      // FIND INTERSECTION OF TWO LINES
+      // ============================================================
+
+      function getLineIntersection(a, b, c, d) {
+        const denominator =
+          (a.x - b.x) * (c.y - d.y) - (a.y - b.y) * (c.x - d.x);
+
+        if (denominator === 0) {
+          return null;
+        }
+
+        const x =
+          ((a.x * b.y - a.y * b.x) * (c.x - d.x) -
+            (a.x - b.x) * (c.x * d.y - c.y * d.x)) /
+          denominator;
+
+        const y =
+          ((a.x * b.y - a.y * b.x) * (c.y - d.y) -
+            (a.y - b.y) * (c.x * d.y - c.y * d.x)) /
+          denominator;
+
+        return {
+          x: x,
+          y: y,
+        };
+      }
+
+      // ============================================================
+      // EXAMPLES
+      // ============================================================
+
+      // Get the center of line1
+      const lineCenter = getLineCenter("line1");
+
+      if (lineCenter) {
+        console.log("Line center:", lineCenter);
+      }
+
+      // Get the center of polygon1
+      const polygonCenter = getPolygonCenter("polygon1");
+
+      if (polygonCenter) {
+        console.log("Polygon center:", polygonCenter);
+      }
+    </script>
+  </body>
+</html>

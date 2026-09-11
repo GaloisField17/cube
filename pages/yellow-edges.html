@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>The Yellow Edges — Beginner's Rubik's Cube Method</title>
+
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../animation.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="../roofpig_and_three.min.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Beginner's Method for Solving the 3×3 Rubik's Cube</h1>
+    </header>
+
+    <main>
+      <nav class="step-navigation">
+        <a href="../index.html">← Introduction</a>
+        <a href="white-cross.html">White Cross</a>
+        <a href="white-corners.html">White Corners</a>
+        <a href="second-layer.html">Second Layer</a>
+        <a href="yellow-cross.html">Yellow Cross</a>
+        <a href="yellow-face.html">Yellow Face</a>
+        <a href="yellow-corners.html">Yellow Corners</a>
+        <a href="yellow-edges.html" class="active">Yellow Edges</a>
+      </nav>
+
+      <h1>The Yellow Edges</h1>
+      <div class="step">
+        <div class="step-text">
+          <p>Finsihing this section will complete our cube.</p>
+        </div>
+
+        <div class="step-cubes">
+          <div class="step-cube">
+            <div
+              id="yellow-edges-repeat"
+              class="roofpig custom"
+              style="--w: 300px; --h: 300px; background-color: #b0ccd6"
+              data-config="colored=*|alg=y y y y x2 x2|hover=none|speed=1200"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <h2>One Edge in Correct Position</h2>
+      <div class="step">
+        <div class="step-text">
+          <p>
+            When there is an edge in correct position, we rotate the cube so the
+            solved lateral face is the Back face.
+          </p>
+          <p>In short, we rotate our cube as one of the following examples:</p>
+        </div>
+        <div class="step-cubes horizontal">
+          <div class="step-cube">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="setupmoves=|colored=u- u u*/c Bu|hover=far|speed=900"
+            ></div>
+          </div>
+          <div class="step-cube">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="setupmoves=y|colored=u- u u*/c Lu|hover=far|speed=900"
+            ></div>
+          </div>
+          <div class="step-cube">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="setupmoves=y2|colored=u- u u*/c Fu|hover=far|speed=900"
+            ></div>
+          </div>
+          <div class="step-cube">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="setupmoves=y'|colored=u- u u*/c Ru|hover=far|speed=900"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <p>
+        If none of the edges are in correction position, we jump straight into
+        the algorithm.
+      </p>
+      <h2>Algorithm: F2 U L R' F2 R L' U F2</h2>
+      <p>
+        When we have our solved face at the back, we apply the following
+        algorithm:
+      </p>
+
+      <p style="text-align: center"><code>F2 U L R' F2 R L' U F2</code></p>
+
+      <p>
+        We repeatedly apply this algorithm up to 3 times, rotating the cube so
+        the solved lateral face is on the back each time.
+      </p>
+      <div class="step-cubes horizontal">
+        <div class="step-cube-titled">
+          <div
+            class="roofpig custom"
+            style="--w: 300px; --h: 300px"
+            data-config="setupmoves=F2 U' L R' F2 R L' U F2 F2 U' L R' F2 R L' U F2|alg=F2 U L R' F2 R L' U F2|flags=showalg|hover=far|speed=900"
+          ></div>
+          <div class="cube-title">
+            <br /><br /><br />
+            One edge in correct position.
+          </div>
+        </div>
+        <div class="step-cube-titled">
+          <div
+            class="roofpig custom"
+            style="--w: 300px; --h: 300px"
+            data-config="setupmoves=F2 U L R' F2 R L' U F2 y2 F2 U' L R' F2 R L' U' F2 F2 U L R' F2 R L' U F2 y2 F2 U L R' F2 R L' U F2 F2 U L R' F2 R L' U F2|alg=F2 U L R' F2 R L' U F2 y2 F2 U L R' F2 R L' U F2 F2 U L R' F2 R L' U F2|flags=showalg|hover=far|speed=900"
+          ></div>
+          <div class="cube-title">
+            <br /><br /><br />
+            No edges in correct position.
+          </div>
+        </div>
+      </div>
+      <div class="step-cubes">
+        <div class="step-cube">
+          <div
+            id="final-repeat"
+            class="roofpig custom"
+            style="--w: 50px; --h: 50px; background-color: #b0ccd6"
+            data-config="colored=*|alg=y y y y x x x x|hover=none|speed=300"
+          ></div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div style="text-align: right">
+        <a href="https://github.com/GaloisField17/cube" style="color: pink">
+          GitHub
+        </a>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

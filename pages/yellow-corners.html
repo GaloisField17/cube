@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>The Yellow Corners — Beginner's Rubik's Cube Method</title>
+
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../animation.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="../roofpig_and_three.min.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Beginner's Method for Solving the 3×3 Rubik's Cube</h1>
+    </header>
+
+    <main>
+      <nav class="step-navigation">
+        <a href="../index.html">← Introduction</a>
+        <a href="white-cross.html">White Cross</a>
+        <a href="white-corners.html">White Corners</a>
+        <a href="second-layer.html">Second Layer</a>
+        <a href="yellow-cross.html">Yellow Cross</a>
+        <a href="yellow-face.html">Yellow Face</a>
+        <a href="yellow-corners.html" class="active">Yellow Corners</a>
+        <a href="yellow-edges.html">Yellow Edges</a>
+      </nav>
+
+      <h1>The Yellow Corners</h1>
+
+      <div class="step">
+        <div class="step-text">
+          <p>At the end of this step, we will have completed the corners.</p>
+          <p>
+            We will use one algorithm repeatedly to solve the corners. Depending
+            on the arrangement of the yellow corners, we will orient the cube
+            correctly before each application of the algorithm.
+          </p>
+        </div>
+
+        <div class="step-cubes">
+          <div class="step-cube">
+            <div
+              id="yellow-corners-repeat"
+              class="roofpig custom"
+              style="--w: 300px; --h: 300px; background-color: #b0ccd6"
+              data-config="colored=u*- u u*/c|alg=y y y y|hover=none|speed=1200"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <h2>Two Corners With Same Facelet on One Side</h2>
+      <div class="step">
+        <div class="step-text">
+          <p>
+            If one side has 2 corners with same facelet, we rotate the Up face
+            to match the corners with the center of their facelets and make that
+            face our Back face.
+          </p>
+
+          <p>In short, we orient our cube as one of the following examples:</p>
+        </div>
+        <div class="step-cubes horizontal">
+          <div class="step-cube-titled">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="setupmoves=|colored=u- u UBL UBR|tweaks= X:Bul X:Bur X:B|hover=far|speed=900"
+            ></div>
+            <div class="cube-title">Two orange facelets</div>
+          </div>
+          <div class="step-cube-titled">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="setupmoves=y|colored=u- u ULB ULF|tweaks= X:Lub X:Luf X:L|hover=far|speed=900"
+            ></div>
+            <div class="cube-title">Two blue facelets</div>
+          </div>
+          <div class="step-cube-titled">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="setupmoves=y2|colored=u- u UFL UFR|tweaks= X:Ful X:Fur X:F|hover=far|speed=900"
+            ></div>
+            <div class="cube-title">Two red facelets</div>
+          </div>
+          <div class="step-cube-titled">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="setupmoves=y'|colored=u- u URB URF|tweaks= X:Rub X:Ruf X:R|hover=far|speed=900"
+            ></div>
+            <div class="cube-title">Two green facelets</div>
+          </div>
+        </div>
+      </div>
+      <h2>Each Side With Different Facelet</h2>
+      <div class="step">
+        <div class="step-text">
+          <p>
+            If we can't have one of the orientations above, we rotate the Up
+            face to match one corner then make that face our Back face.
+          </p>
+
+          <p>
+            In short, we orient our cube so it looks like one of the following:
+          </p>
+        </div>
+        <div class="step-cubes horizontal">
+          <div class="step-cube">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="setupmoves=U R' F R' B2 R F' R' B2 R2 U|colored=u- u UBL UBR|tweaks= X:Bul X:Bur X:B|hover=far|speed=900"
+            ></div>
+          </div>
+          <div class="step-cube">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="setupmoves=U R' F R' B2 R F' R' B2 R2 U2|colored=u- u UBL UBR|tweaks= X:Bul X:Bur X:B|hover=far|speed=900"
+            ></div>
+          </div>
+          <div class="step-cube">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="setupmoves=y U R' F R' B2 R F' R' B2 R2 U|colored=u- u ULB ULF|tweaks= X:Lub X:Luf X:L|hover=far|speed=900"
+            ></div>
+          </div>
+          <div class="step-cube">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="setupmoves=y U R' F R' B2 R F' R' B2 R2 U2|colored=u- u ULB ULF|tweaks= X:Lub X:Luf X:L|hover=far|speed=900"
+            ></div>
+          </div>
+          <div class="step-cube">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="setupmoves=y2 U R' F R' B2 R F' R' B2 R2 U|colored=u- u UFL UFR|tweaks= X:Ful X:Fur X:F|hover=far|speed=900"
+            ></div>
+          </div>
+          <div class="step-cube">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="setupmoves=y2 U R' F R' B2 R F' R' B2 R2 U2|colored=u- u UFL UFR|tweaks= X:Ful X:Fur X:F|hover=far|speed=900"
+            ></div>
+          </div>
+          <div class="step-cube">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="setupmoves=y' U R' F R' B2 R F' R' B2 R2 U|colored=u- u URB URF|tweaks= X:Rub X:Ruf X:R|hover=far|speed=900"
+            ></div>
+          </div>
+          <div class="step-cube">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="setupmoves=y' U R' F R' B2 R F' R' B2 R2 U2|colored=u- u URB URF|tweaks= X:Rub X:Ruf X:R|hover=far|speed=900"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <h2>Algorithm: R' F R' B2 R F' R' B2 R2</h2>
+      <p>
+        After orienting the corners as described above, we will apply the
+        following algorithm:
+      </p>
+
+      <p style="text-align: center"><code>R' F R' B2 R F' R' B2 R2</code></p>
+
+      <p>
+        We then rotate the Up face to bring the corners on the appropiate faces.
+        If we end up with two facelets of the same colors on each side, we are
+        done. Otherwise, we rotate the Up face as described above and apply the
+        algorithm again.
+      </p>
+      <div class="step-cubes horizontal">
+        <div class="step-cube-titled">
+          <div
+            class="roofpig custom"
+            style="--w: 300px; --h: 300px"
+            data-config="setupmoves=R U R' U R U2 R' R U R' U R U2 R' U R U R' U R U2 R' R U R' U R U2 R' R' F R' B2 R F' R' B2 R2 y U2 R' F R' B2 R F' R' B2 R2 U'|alg=U2 R' F R' B2 R F' R' B2 R2 U'|tweaks= X:Bur X:Rub  X:Fur X:Ruf X:Lub X:Bul  X:Luf X:Ful|flags=showalg|hover=far|speed=900"
+          ></div>
+          <div class="cube-title narrow">
+            <br /><br /><br />Two facelets of the same color on one side.
+          </div>
+        </div>
+        <div class="step-cube-titled">
+          <div
+            class="roofpig custom"
+            style="--w: 300px; --h: 300px"
+            data-config="setupmoves=R U2 R' U' R U' R' U R U R' U R U2 R' U R U R' U R U2 R' U' R U R' U R U2 R' U2 R U R' U R U2 R' R' F R' B2 R F' R' B2 R2 U R' F R' B2 R F' R' B2 R2 U' R' F R' B2 R F' R' B2 R2 y R' F R' B2 R F' R' B2 R2 U'|alg=U' R' F R' B2 R F' R' B2 R2 y R' F R' B2 R F' R' B2 R2 U'|flags=showalg|tweaks= X:Bur X:Rub  X:Fur X:Ruf X:Lub X:Bul  X:Luf X:Ful|hover=far|speed=900"
+          ></div>
+          <div class="cube-title narrow">
+            <br /><br /><br />
+            Each face with different facelet.
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div style="text-align: right">
+        <a href="https://github.com/GaloisField17/cube" style="color: pink">
+          GitHub
+        </a>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

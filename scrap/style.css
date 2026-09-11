@@ -1,0 +1,52 @@
+/* --- In-text Citations Style --- */
+sup.reference {
+    font-size: 0.75em;
+    line-height: 0;
+}
+
+sup.reference a {
+    text-decoration: none;
+    color: #36c;
+}
+
+sup.reference a:hover {
+    text-decoration: underline;
+}
+
+/* --- Reference List Style --- */
+ol.references {
+    font-size: 0.9em;
+    color: #54595d;
+}
+
+ol.references li {
+    margin-bottom: 0.5em;
+}
+
+ol.references a {
+    color: #36c;
+    text-decoration: none;
+}
+
+ol.references a:hover {
+    text-decoration: underline;
+}
+
+/* --- Backlinks (^ a) Styling --- */
+.mw-backlink {
+    font-family: monospace;
+    font-size: 0.85em;
+}
+
+/* --- Wikipedia PDF Icon Injection --- */
+ol.references a[href$=".pdf"], 
+ol.references a[href*=".pdf?"],
+ol.references a[href*=".pdf#"],
+ol.references a[href$=".PDF"], 
+ol.references a[href*=".PDF?"],
+ol.references a[href*=".PDF#"] {
+    display: inline-block;
+    padding-right: 18px !important; 
+    background: url('https://upload.wikimedia.org/wikipedia/commons/4/4d/Icon_pdf_file.png') no-repeat right center !important;
+    background-size: 14px 14px !important;
+}

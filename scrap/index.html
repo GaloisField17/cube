@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wikipedia-style References Example</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <p>
+        Webcams have become ubiquitous tools for video conferencing and streaming.
+        <!-- In-text superscript citation linking to the reference list -->
+        <sup class="reference" id="ref-call-1"><a href="#ref-1">[1]</a></sup>
+        <sup class="reference" id="ref-call-2"><a href="#ref-2">[2]</a></sup>
+    </p>
+
+    <hr>
+
+    <h2>References</h2>
+    <!-- The reference list -->
+    <ol class="references">
+        <li id="ref-1">
+            Author, A. (2023). 
+            <a href="https://example.com/sample-document.pdf">Understanding Webcams (PDF)</a>. 
+            Tech Publishing. 
+            <!-- Backlink arrow pointing back to the text -->
+            <span class="mw-backlink">^ <a href="#ref-call-1">a</a></span>
+        </li>
+        <li id="ref-2">
+            Smith, B. (2024). 
+            <a href="https://example.com/regular-article">The History of Video Capture</a>. 
+            Journal of Technology.
+            <span class="mw-backlink">^ <a href="#ref-call-2">a</a></span>
+        </li>
+    </ol>
+
+</body>
+</html>

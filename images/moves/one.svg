@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 442 542">
+	<defs>
+		<linearGradient id="card-surface" x1="0" y1="0" x2="0.9" y2="1">
+			<stop offset="0" stop-color="#f8fbfc"/>
+			<stop offset="1" stop-color="#e4edf1"/>
+		</linearGradient>
+		<linearGradient id="card-footer" x1="0" y1="0" x2="1" y2="1">
+			<stop offset="0" stop-color="#ffffff"/>
+			<stop offset="1" stop-color="#edf3f5"/>
+		</linearGradient>
+		<filter id="cube-shadow" x="-20%" y="-20%" width="140%" height="150%">
+			<feGaussianBlur in="SourceAlpha" stdDeviation="7" result="blur"/>
+			<feOffset dy="10" result="offset"/>
+			<feComponentTransfer><feFuncA type="linear" slope="0.2"/></feComponentTransfer>
+			<feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+		</filter>
+		<clipPath id="clippath"><path d="M338.45 257.31l-110.1-98.25c-3.05-2.72-7.64-2.76-10.73-.08L103.88 257.31v-36.43c0-2.36 1.03-4.61 2.81-6.15l110.93-95.9c3.09-2.67 7.69-2.64 10.73.08l107.38 95.82c1.73 1.54 2.72 3.75 2.72 6.07z"/></clipPath>
+		<clipPath id="clippath-1"><path d="M331.54 311.28l.05-.18h-.08l-16.96-98.93c-.9-5.26-5.47-9.11-10.81-9.11H142.3c-5.34 0-9.9 3.85-10.81 9.11l-16.96 98.93h-.08l.05.18-.05.27h.12l23.88 90.46c1.27 4.81 5.62 8.17 10.6 8.17h147.93c4.98 0 9.33-3.35 10.6-8.17l23.88-90.46h.12z"/></clipPath>
+		<style>
+			.line { fill: none; stroke: #111820; stroke-width: 8px; stroke-linecap: round; stroke-linejoin: round; }
+			.edge { fill: none; stroke: #050608; stroke-width: 8px; stroke-linecap: round; stroke-linejoin: round; }
+			.label { fill: #111820; font-family: Futura-Bold, Futura, sans-serif; font-size: 72px; font-weight: 700; }
+		</style>
+	</defs>
+	<g id="basic">
+		<rect x="6" y="6" width="430" height="530" rx="40" fill="#c5d2d8"/>
+		<rect x="6" y="6" width="430" height="530" rx="40" fill="url(#card-surface)"/>
+		<path fill="url(#card-footer)" d="M6.01 496.29c.16 21.96 18 39.71 39.99 39.71h350c22.09 0 40-17.91 40-40v-75.39L6.01 496.29Z"/>
+		<path fill="none" stroke="#fff" stroke-width="12" stroke-linejoin="round" d="M6 46C6 23.91 23.91 6 46 6h350c22.09 0 40 17.91 40 40v450c0 22.09-17.91 40-40 40H46c-22.09 0-40-17.91-40-40z"/>
+		<text class="label" transform="translate(196.09 505.82)"><tspan x="0" y="0">B</tspan></text>
+		<g filter="url(#cube-shadow)">
+			<g clip-path="url(#clippath)">
+				<polygon fill="#e2e2e2" stroke="#111820" stroke-width="6" stroke-linejoin="round" points="338.45 257.31 223.02 154.3 103.87 257.31 103.87 217.16 223.02 114.15 338.45 217.16"/>
+				<path class="line" d="M141 185.73v39.49m39.44-74.26v40.15m74.64-48.35v39.48m39.45-3.9v40.15M103.87 257.31l119.15-102.73v-40.43"/>
+			</g>
+			<path class="edge" d="M338.45 257.31l-110.1-98.25c-3.05-2.72-7.64-2.76-10.73-.08L103.88 257.31v-36.43c0-2.36 1.03-4.61 2.81-6.15l110.93-95.9c3.09-2.67 7.69-2.64 10.73.08l107.38 95.82c1.73 1.54 2.72 3.75 2.72 6.07z"/>
+			<polygon fill="#1a1a1a" stroke="#000" stroke-width="8" stroke-linejoin="round" points="338.45 257.31 220.07 301.62 103.87 257.31 224.22 155.58"/>
+			<polygon fill="#4d4d4d" points="305.43 410.18 140.61 410.18 114.45 311.1 331.59 311.1"/>
+			<g clip-path="url(#clippath-1)"><polygon fill="#666" points="312.98 203.06 133.05 203.06 114.45 311.56 331.59 311.56"/></g>
+			<path class="edge" d="M192.75 203.06l-4.08 108.16 11.47 98.65m56.36-206.81 4.08 108.16-11.47 98.65M123.75 257.31h198.54m-198.54 89.02h198.54m-203.84-35.23 213.02.46M132.66 380.09h179.48"/>
+			<path class="line" d="M331.54 311.28l.05-.18h-.08l-16.96-98.93c-.9-5.26-5.47-9.11-10.81-9.11H142.3c-5.34 0-9.9 3.85-10.81 9.11l-16.96 98.93h-.08l.05.18-.05.27h.12l23.88 90.46c1.27 4.81 5.62 8.17 10.6 8.17h147.93c4.98 0 9.33-3.35 10.6-8.17l23.88-90.46h.12z"/>
+		</g>
+		<path fill="#e53935" d="M324.92 158.05c1.76.17 3.24-1.29 3.11-3.04-.63-8.53-2.38-17.01-5.26-25.27-7-20.13-20.04-37.12-37.72-49.14-21.8-14.82-48.07-20.27-73.97-15.33-25.9 4.94-48.32 19.66-63.14 41.46-4.26 6.26-7.75 12.95-10.46 19.95l-18.8-6.41c-.85-.29-1.79-.28-2.59.12-1.55.78-2.18 2.53-1.63 4.05l15.82 43.63c.34.93 1.08 1.66 2.02 1.98.34.12.7.18 1.06.18.61 0 1.22-.17 1.75-.51l39.1-24.8c.76-.48 1.34-1.22 1.53-2.1.36-1.7-.61-3.29-2.13-3.81l-18.33-6.26c2.15-5.41 4.89-10.59 8.2-15.46 12.33-18.14 31.16-30.22 52.86-33.88 18.88-3.18 38.4.55 54.75 10.52 22.19 13.53 35.74 36.13 38.09 60.53.12 1.23 1.11 2.19 2.33 2.3z"/>
+	</g>
+</svg>

@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>The Yellow Face — Beginner's Rubik's Cube Method</title>
+
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../animation.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="../roofpig_and_three.min.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Beginner's Method for Solving the 3×3 Rubik's Cube</h1>
+    </header>
+
+    <main>
+      <nav class="step-navigation">
+        <a href="../index.html">← Introduction</a>
+        <a href="white-cross.html">White Cross</a>
+        <a href="white-corners.html">White Corners</a>
+        <a href="second-layer.html">Second Layer</a>
+        <a href="yellow-cross.html">Yellow Cross</a>
+        <a href="yellow-face.html" class="active">Yellow Face</a>
+        <a href="yellow-corners.html">Yellow Corners</a>
+        <a href="yellow-edges.html">Yellow Edges</a>
+      </nav>
+
+      <h1>The Yellow Face</h1>
+
+      <div class="step">
+        <div class="step-text">
+          <p>
+            At the end of this step, we will have completed the yellow face.
+          </p>
+          <p>
+            Similar to the previous step, we will use a single algorithm
+            multiple times to form the face. Depending on the arrangement of the
+            facelets of the yellow corners, we will orient the cube correctly
+            before each application of the algorithm.
+          </p>
+        </div>
+
+        <div class="step-cubes">
+          <div class="step-cube">
+            <div
+              id="yellow-face-repeat"
+              class="roofpig custom"
+              style="--w: 300px; --h: 300px; background-color: #b0ccd6"
+              data-config="colored=U*- u|alg=y y y y|hover=none|speed=1200"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <h2>No Yellow Corners on the Up Face</h2>
+      <div class="step">
+        <div class="step-text">
+          <p>
+            When there are no yellow corners facing up, we will rotate the cube
+            or the Up face so that there is a yellow corner is on the Left face.
+          </p>
+        </div>
+        <div class="step-cubes">
+          <div class="step-cube">
+            <div
+              class="roofpig custom"
+              style="--w: 300px; --h: 300px"
+              data-config="setupmoves=R U R' U R U2 R' R U R' U R U2 R' U|alg=|colored=U*- u/e U Ufr|solved=Rub Ruf Lub Luf|hover=far|speed=900"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <h2>One Yellow Corner on the Up Face</h2>
+      <div class="step">
+        <div class="step-text">
+          <p>
+            When only one yellow corner is facing up, we will rotate the cube or
+            the Up face so that the yellow corner is on the Front-Left corner.
+          </p>
+        </div>
+        <div class="step-cubes">
+          <div class="step-cube">
+            <div
+              class="roofpig custom"
+              style="--w: 300px; --h: 300px"
+              data-config="setupmoves=R U R' U R U2 R' U2|alg=|colored=U*- u/e U Ufl|solved=Rub Fur Bul|tweaks=|hover=far|speed=900"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <h2>All Other Cases</h2>
+      <p>
+        For any other case, we will rotate the cube or the Up face so that a
+        yellow corner is in the Front-Up-Left position.
+      </p>
+      <div class="step-cubes horizontal">
+        <div class="step-cube">
+          <div
+            class="roofpig custom"
+            style="--w: 300px; --h: 300px"
+            data-config="setupmoves=R U R' U R U2 R' U|alg=|colored=U*- u/e U Ubl|hover=far|speed=900"
+          ></div>
+        </div>
+        <div class="step-cube">
+          <div
+            class="roofpig custom"
+            style="--w: 300px; --h: 300px"
+            data-config="setupmoves=R U R' U R U2 R' R U R' U R U2 R'|alg=|colored=U*- u/e U Ufl Ufr|hover=far|speed=900"
+          ></div>
+        </div>
+      </div>
+      <h2>Algorithm: R U R' U R U2 R'</h2>
+      <p>
+        After orienting the cube as described above, we will apply the following
+        algorithm:
+      </p>
+
+      <p style="text-align: center"><code>R U R' U R U2 R'</code></p>
+
+      <p>
+        We will repeatedly apply this algorithm until the yellow face is formed,
+        making sure the cube is oriented correctly before applying the algorithm
+        again.
+      </p>
+      <div class="step-cubes horizontal">
+        <div class="step-cube-titled">
+          <div
+            class="roofpig custom"
+            style="--w: 300px; --h: 300px"
+            data-config="setupmoves=R U R' U R U2 R' R U R' U R U2 R' U R U R' U R U2 R' R U R' U R U2 R'|alg=R U R' U R U2 R' R U R' U R U2 R'|tweaks= X:Ubr X:Ubl X:Ufr X:Ufl|flags=showalg|hover=far|speed=900"
+          ></div>
+          <div class="cube-title narrow">
+            <br /><br /><br />No yellow corners on the Up face. We need to start
+            with a yellow corner on Left face.
+          </div>
+        </div>
+        <div class="step-cube-titled">
+          <div
+            class="roofpig custom"
+            style="--w: 300px; --h: 300px"
+            data-config="setupmoves=R U2 R' U' R U' R' U R U R' U R U2 R' U R U R' U R U2 R' U' R U R' U R U2 R' U2 R U R' U R U2 R'|alg=R U R' U R U2 R' U' R U R' U R U2 R' U2 R U R' U R U2 R'|tweaks= X:Ubr X:Ubl X:Ufr X:Ufl|flags=showalg|hover=far|speed=900"
+          ></div>
+          <div class="cube-title narrow">
+            <br /><br /><br />
+            Any other case. We need to start with a yellow corner in the
+            Front-Up-Left (FUL) position.
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div style="text-align: right">
+        <a href="https://github.com/GaloisField17/cube" style="color: pink">
+          GitHub
+        </a>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

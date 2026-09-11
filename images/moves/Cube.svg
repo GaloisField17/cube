@@ -1,0 +1,27 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 1000 1000"
+  width="500"
+  height="500"
+>
+
+<rect width="1000" height="1000" fill="#ffffff"/>
+
+<defs>
+  <g id="face" stroke="#000000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="0" y="0" width="72" height="72"/>
+    <rect x="72" y="0" width="72" height="72"/>
+    <rect x="144" y="0" width="72" height="72"/>
+    <rect x="0" y="72" width="72" height="72"/>
+    <rect x="72" y="72" width="72" height="72"/>
+    <rect x="144" y="72" width="72" height="72"/>
+    <rect x="0" y="144" width="72" height="72"/>
+    <rect x="72" y="144" width="72" height="72"/>
+    <rect x="144" y="144" width="72" height="72"/>
+  </g>
+</defs>
+<use href="#face" fill="white" transform="matrix(.995 .486 -.995 .486 250 20)"/>
+<use href="#face" fill="white" transform="matrix(.995 .486 0 1.25 35 125)"/>
+<use href="#face" fill="white" transform="matrix(.995 -.486 0 1.25 250 230)"/>
+
+</svg>

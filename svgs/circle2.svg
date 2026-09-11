@@ -1,0 +1,1008 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="600"
+    height="600"
+    viewBox="90 30 600 600"
+>
+    <rect id="trigger" x="90" y="30" width="600" height="600" fill="#ffffff"/>
+    
+    <circle
+      
+      cx="390"
+      cy="330"
+      r="1"
+      fill="none"
+      stroke="black"
+      stroke-width="2"
+    >
+    </circle>
+  
+    <polygon
+      
+      points="360,240 480,240 480,360 360,360"
+      fill="none"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="1"
+      data-col="1"
+      data-index="0"
+      points="360,240 400,240 400,280 360,280"
+      fill="orange"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="1"
+      data-col="2"
+      data-index="1"
+      points="400,240 440,240 440,280 400,280"
+      fill="orange"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="1"
+      data-col="3"
+      data-index="2"
+      points="440,240 480,240 480,280 440,280"
+      fill="orange"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="2"
+      data-col="1"
+      data-index="3"
+      points="360,280 400,280 400,320 360,320"
+      fill="orange"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="2"
+      data-col="2"
+      data-index="4"
+      points="400,280 440,280 440,320 400,320"
+      fill="orange"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="2"
+      data-col="3"
+      data-index="5"
+      points="440,280 480,280 480,320 440,320"
+      fill="orange"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="3"
+      data-col="1"
+      data-index="6"
+      points="360,320 400,320 400,360 360,360"
+      fill="orange"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="3"
+      data-col="2"
+      data-index="7"
+      points="400,320 440,320 440,360 400,360"
+      fill="orange"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="3"
+      data-col="3"
+      data-index="8"
+      points="440,320 480,320 480,360 440,360"
+      fill="orange"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="1"
+      data-col="1"
+      data-index="0"
+      points="360,240 360,280 340,300 340,260"
+      fill="#07f"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="1"
+      data-col="2"
+      data-index="1"
+      points="360,280 360,320 340,340 340,300"
+      fill="#07f"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="1"
+      data-col="3"
+      data-index="2"
+      points="360,320 360,360 340,380 340,340"
+      fill="#07f"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="2"
+      data-col="1"
+      data-index="3"
+      points="340,260 340,300 320,320 320,280"
+      fill="#07f"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="2"
+      data-col="2"
+      data-index="4"
+      points="340,300 340,340 320,360 320,320"
+      fill="#07f"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="2"
+      data-col="3"
+      data-index="5"
+      points="340,340 340,380 320,400 320,360"
+      fill="#07f"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="1"
+      data-col="1"
+      data-index="0"
+      points="360,360 400,360 380,380 340,380"
+      fill="#eee"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="1"
+      data-col="2"
+      data-index="1"
+      points="400,360 440,360 420,380 380,380"
+      fill="#eee"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="1"
+      data-col="3"
+      data-index="2"
+      points="440,360 480,360 460,380 420,380"
+      fill="#eee"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="2"
+      data-col="1"
+      data-index="3"
+      points="340,380 380,380 360,400 320,400"
+      fill="#eee"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="2"
+      data-col="2"
+      data-index="4"
+      points="380,380 420,380 400,400 360,400"
+      fill="#eee"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="2"
+      data-col="3"
+      data-index="5"
+      points="420,380 460,380 440,400 400,400"
+      fill="#eee"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="1"
+      data-col="1"
+      data-index="0"
+      points="320,400 360,400 340,420 300,420"
+      fill="olive"
+      stroke="black"
+      stroke-width="5"
+      stroke-linejoin="round"
+    ><animateTransform
+  attributeName="transform"
+  type="rotate"
+  from="0 370 350"
+  to="-45 370 350"
+  dur="1s"
+  begin="0s; trigger.click"
+  fill="freeze"
+/>
+
+
+    </polygon>
+  
+    <polygon
+      data-row="1"
+      data-col="2"
+      data-index="1"
+      points="360,400 400,400 380,420 340,420"
+      fill="olive"
+      stroke="black"
+      stroke-width="5"
+      stroke-linejoin="round"
+    ><animateTransform
+  attributeName="transform"
+  type="rotate"
+  from="0 370 350"
+  to="-45 370 350"
+  dur="1s"
+  begin="0s; trigger.click"
+  fill="freeze"
+/>
+
+
+    </polygon>
+  
+    <polygon
+      data-row="1"
+      data-col="3"
+      data-index="2"
+      points="400,400 440,400 420,420 380,420"
+      fill="olive"
+      stroke="black"
+      stroke-width="5"
+      stroke-linejoin="round"
+    ><animateTransform
+  attributeName="transform"
+  type="rotate"
+  from="0 370 350"
+  to="-45 370 350"
+  dur="1s"
+  begin="0s; trigger.click"
+  fill="freeze"
+/>
+
+
+    </polygon>
+  
+    <polygon
+      
+      points="340,260 460,260 460,380 340,380"
+      fill="black"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      
+      points="340,260 460,260 460,380 340,380"
+      fill="black"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      
+      points="320,280 440,280 440,400 320,400"
+      fill="black"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      
+      points="320,280 440,280 440,400 320,400"
+      fill="black"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      
+      points="300,380 420,380 480,320 360,320"
+      fill="black"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      
+      points="300,380 420,380 480,320 360,320"
+      fill="black"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      
+      points="300,340 420,340 480,280 360,280"
+      fill="black"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      
+      points="300,340 420,340 480,280 360,280"
+      fill="black"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      
+      points="400,240 340,300 340,420 400,360"
+      fill="black"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      
+      points="400,240 340,300 340,420 400,360"
+      fill="black"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      
+      points="440,240 380,300 380,420 440,360"
+      fill="black"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      
+      points="440,240 380,300 380,420 440,360"
+      fill="black"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="1"
+      data-col="1"
+      data-index="0"
+      points="360,240 400,240 380,260 340,260"
+      fill="yellow"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="1"
+      data-col="2"
+      data-index="1"
+      points="400,240 440,240 420,260 380,260"
+      fill="yellow"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="1"
+      data-col="3"
+      data-index="2"
+      points="440,240 480,240 460,260 420,260"
+      fill="yellow"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="2"
+      data-col="1"
+      data-index="3"
+      points="340,260 380,260 360,280 320,280"
+      fill="yellow"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="2"
+      data-col="2"
+      data-index="4"
+      points="380,260 420,260 400,280 360,280"
+      fill="yellow"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="2"
+      data-col="3"
+      data-index="5"
+      points="420,260 460,260 440,280 400,280"
+      fill="yellow"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="1"
+      data-col="1"
+      data-index="0"
+      points="480,240 480,280 460,300 460,260"
+      fill="#0d0"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="1"
+      data-col="2"
+      data-index="1"
+      points="480,280 480,320 460,340 460,300"
+      fill="#0d0"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="1"
+      data-col="3"
+      data-index="2"
+      points="480,320 480,360 460,380 460,340"
+      fill="#0d0"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="2"
+      data-col="1"
+      data-index="3"
+      points="460,260 460,300 440,320 440,280"
+      fill="#0d0"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="2"
+      data-col="2"
+      data-index="4"
+      points="460,300 460,340 440,360 440,320"
+      fill="#0d0"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="2"
+      data-col="3"
+      data-index="5"
+      points="460,340 460,380 440,400 440,360"
+      fill="#0d0"
+      stroke="black"
+      stroke-width="2"
+      stroke-linejoin="round"
+    >
+    </polygon>
+  
+    <polygon
+      data-row="1"
+      data-col="1"
+      data-index="0"
+      points="320,280 320,320 300,340 300,300"
+      fill="olive"
+      stroke="black"
+      stroke-width="5"
+      stroke-linejoin="round"
+    ><animateTransform
+  attributeName="transform"
+  type="rotate"
+  from="0 370 350"
+  to="-45 370 350"
+  dur="1s"
+  begin="0s; trigger.click"
+  fill="freeze"
+/>
+
+
+    </polygon>
+  
+    <polygon
+      data-row="1"
+      data-col="2"
+      data-index="1"
+      points="320,320 320,360 300,380 300,340"
+      fill="olive"
+      stroke="black"
+      stroke-width="5"
+      stroke-linejoin="round"
+    ><animateTransform
+  attributeName="transform"
+  type="rotate"
+  from="0 370 350"
+  to="-45 370 350"
+  dur="1s"
+  begin="0s; trigger.click"
+  fill="freeze"
+/>
+
+
+    </polygon>
+  
+    <polygon
+      data-row="1"
+      data-col="3"
+      data-index="2"
+      points="320,360 320,400 300,420 300,380"
+      fill="olive"
+      stroke="black"
+      stroke-width="5"
+      stroke-linejoin="round"
+    ><animateTransform
+  attributeName="transform"
+  type="rotate"
+  from="0 370 350"
+  to="-45 370 350"
+  dur="1s"
+  begin="0s; trigger.click"
+  fill="freeze"
+/>
+
+
+    </polygon>
+  
+    <polygon
+      data-row="1"
+      data-col="1"
+      data-index="0"
+      points="320,280 360,280 340,300 300,300"
+      fill="olive"
+      stroke="black"
+      stroke-width="5"
+      stroke-linejoin="round"
+    ><animateTransform
+  attributeName="transform"
+  type="rotate"
+  from="0 370 350"
+  to="-45 370 350"
+  dur="1s"
+  begin="0s; trigger.click"
+  fill="freeze"
+/>
+
+
+    </polygon>
+  
+    <polygon
+      data-row="1"
+      data-col="2"
+      data-index="1"
+      points="360,280 400,280 380,300 340,300"
+      fill="olive"
+      stroke="black"
+      stroke-width="5"
+      stroke-linejoin="round"
+    ><animateTransform
+  attributeName="transform"
+  type="rotate"
+  from="0 370 350"
+  to="-45 370 350"
+  dur="1s"
+  begin="0s; trigger.click"
+  fill="freeze"
+/>
+
+
+    </polygon>
+  
+    <polygon
+      data-row="1"
+      data-col="3"
+      data-index="2"
+      points="400,280 440,280 420,300 380,300"
+      fill="olive"
+      stroke="black"
+      stroke-width="5"
+      stroke-linejoin="round"
+    ><animateTransform
+  attributeName="transform"
+  type="rotate"
+  from="0 370 350"
+  to="-45 370 350"
+  dur="1s"
+  begin="0s; trigger.click"
+  fill="freeze"
+/>
+
+
+    </polygon>
+  
+    <polygon
+      data-row="1"
+      data-col="1"
+      data-index="0"
+      points="440,280 440,320 420,340 420,300"
+      fill="olive"
+      stroke="black"
+      stroke-width="5"
+      stroke-linejoin="round"
+    ><animateTransform
+  attributeName="transform"
+  type="rotate"
+  from="0 370 350"
+  to="-45 370 350"
+  dur="1s"
+  begin="0s; trigger.click"
+  fill="freeze"
+/>
+
+
+    </polygon>
+  
+    <polygon
+      data-row="1"
+      data-col="2"
+      data-index="1"
+      points="440,320 440,360 420,380 420,340"
+      fill="olive"
+      stroke="black"
+      stroke-width="5"
+      stroke-linejoin="round"
+    ><animateTransform
+  attributeName="transform"
+  type="rotate"
+  from="0 370 350"
+  to="-45 370 350"
+  dur="1s"
+  begin="0s; trigger.click"
+  fill="freeze"
+/>
+
+
+    </polygon>
+  
+    <polygon
+      data-row="1"
+      data-col="3"
+      data-index="2"
+      points="440,360 440,400 420,420 420,380"
+      fill="olive"
+      stroke="black"
+      stroke-width="5"
+      stroke-linejoin="round"
+    ><animateTransform
+  attributeName="transform"
+  type="rotate"
+  from="0 370 350"
+  to="-45 370 350"
+  dur="1s"
+  begin="0s; trigger.click"
+  fill="freeze"
+/>
+
+
+    </polygon>
+  
+    <polygon
+      data-row="1"
+      data-col="1"
+      data-index="0"
+      points="300,300 340,300 340,340 300,340"
+      fill="olive"
+      stroke="black"
+      stroke-width="5"
+      stroke-linejoin="round"
+    ><animateTransform
+  attributeName="transform"
+  type="rotate"
+  from="0 370 350"
+  to="-45 370 350"
+  dur="1s"
+  begin="0s; trigger.click"
+  fill="freeze"
+/>
+
+
+    </polygon>
+  
+    <polygon
+      data-row="1"
+      data-col="2"
+      data-index="1"
+      points="340,300 380,300 380,340 340,340"
+      fill="olive"
+      stroke="black"
+      stroke-width="5"
+      stroke-linejoin="round"
+    ><animateTransform
+  attributeName="transform"
+  type="rotate"
+  from="0 370 350"
+  to="-45 370 350"
+  dur="1s"
+  begin="0s; trigger.click"
+  fill="freeze"
+/>
+
+
+    </polygon>
+  
+    <polygon
+      data-row="1"
+      data-col="3"
+      data-index="2"
+      points="380,300 420,300 420,340 380,340"
+      fill="olive"
+      stroke="black"
+      stroke-width="5"
+      stroke-linejoin="round"
+    ><animateTransform
+  attributeName="transform"
+  type="rotate"
+  from="0 370 350"
+  to="-45 370 350"
+  dur="1s"
+  begin="0s; trigger.click"
+  fill="freeze"
+/>
+
+
+    </polygon>
+  
+    <polygon
+      data-row="2"
+      data-col="1"
+      data-index="3"
+      points="300,340 340,340 340,380 300,380"
+      fill="olive"
+      stroke="black"
+      stroke-width="5"
+      stroke-linejoin="round"
+    ><animateTransform
+  attributeName="transform"
+  type="rotate"
+  from="0 370 350"
+  to="-45 370 350"
+  dur="1s"
+  begin="0s; trigger.click"
+  fill="freeze"
+/>
+
+
+    </polygon>
+  
+    <polygon
+      data-row="2"
+      data-col="2"
+      data-index="4"
+      points="340,340 380,340 380,380 340,380"
+      fill="olive"
+      stroke="black"
+      stroke-width="5"
+      stroke-linejoin="round"
+    ><animateTransform
+  attributeName="transform"
+  type="rotate"
+  from="0 370 350"
+  to="-45 370 350"
+  dur="1s"
+  begin="0s; trigger.click"
+  fill="freeze"
+/>
+
+
+    </polygon>
+  
+    <polygon
+      data-row="2"
+      data-col="3"
+      data-index="5"
+      points="380,340 420,340 420,380 380,380"
+      fill="olive"
+      stroke="black"
+      stroke-width="5"
+      stroke-linejoin="round"
+    ><animateTransform
+  attributeName="transform"
+  type="rotate"
+  from="0 370 350"
+  to="-45 370 350"
+  dur="1s"
+  begin="0s; trigger.click"
+  fill="freeze"
+/>
+
+
+    </polygon>
+  
+    <polygon
+      data-row="3"
+      data-col="1"
+      data-index="6"
+      points="300,380 340,380 340,420 300,420"
+      fill="olive"
+      stroke="black"
+      stroke-width="5"
+      stroke-linejoin="round"
+    ><animateTransform
+  attributeName="transform"
+  type="rotate"
+  from="0 370 350"
+  to="-45 370 350"
+  dur="1s"
+  begin="0s; trigger.click"
+  fill="freeze"
+/>
+
+
+    </polygon>
+  
+    <polygon
+      data-row="3"
+      data-col="2"
+      data-index="7"
+      points="340,380 380,380 380,420 340,420"
+      fill="olive"
+      stroke="black"
+      stroke-width="5"
+      stroke-linejoin="round"
+    ><animateTransform
+  attributeName="transform"
+  type="rotate"
+  from="0 370 350"
+  to="-45 370 350"
+  dur="1s"
+  begin="0s; trigger.click"
+  fill="freeze"
+/>
+
+
+    </polygon>
+  
+    <polygon
+      data-row="3"
+      data-col="3"
+      data-index="8"
+      points="380,380 420,380 420,420 380,420"
+      fill="olive"
+      stroke="black"
+      stroke-width="5"
+      stroke-linejoin="round"
+    ><animateTransform
+  attributeName="transform"
+  type="rotate"
+  from="0 370 350"
+  to="-45 370 350"
+  dur="1s"
+  begin="0s; trigger.click"
+  fill="freeze"
+/>
+
+
+    </polygon>
+  
+</svg>

@@ -1,0 +1,280 @@
+/* <p>
+        Note that the correction order is the reverse of the disruption order.
+        We can remember this by considering a faulty sentence being typed one
+        character at a time. The disruption occurs from left to right, while the
+        correction occurs from right to left.
+      </p>
+      <div class="typing">
+        <div class="first-line">
+          <span class="text">Faulty sentence</span><span class="cursor">|</span>
+        </div>
+
+        <div class="second-line">
+          <span class="arrow arrow-forward">==============></span>
+          <span class="arrow arrow-backward"><==============</span>
+        </div>
+
+        <div class="third-line">
+          <span class="description description-forward">DISRUPTION</span>
+          <span class="description description-backward">CORRECTION</span>
+        </div>
+      </div> */
+
+.typing {
+  font-family: monospace;
+  white-space: nowrap;
+  width: fit-content;
+  margin: auto;
+}
+
+/* =========================
+   First line
+   ========================= */
+
+.first-line {
+  height: 1.2em;
+}
+
+.text {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  width: 0;
+
+  animation: text-animation 4.25s steps(15) infinite;
+}
+
+@keyframes text-animation {
+  /* 0 → 1.5s: type */
+  0% {
+    width: 0;
+  }
+
+  35.294% {
+    width: 15ch;
+  }
+
+  /* 1.5 → 2s: hold */
+  47.059% {
+    width: 15ch;
+  }
+
+  /* 2 → 3.5s: delete */
+  82.353% {
+    width: 0;
+  }
+
+  /* 3.5 → 4.25s: hold empty */
+  100% {
+    width: 0;
+  }
+}
+
+.cursor {
+  animation: blink 0.5s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* =========================
+   Second line
+   ========================= */
+
+.second-line {
+  position: relative;
+  width: 15ch;
+  height: 1.2em;
+}
+
+.arrow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15ch;
+}
+
+/* =========================
+   Forward arrow
+
+   ===================>
+   ========================= */
+
+.arrow-forward {
+  clip-path: inset(0 100% 0 0);
+
+  animation: arrow-forward-animation 4.25s steps(15) infinite;
+}
+
+@keyframes arrow-forward-animation {
+  /* 0 → 1.5s: reveal */
+  0% {
+    clip-path: inset(0 100% 0 0);
+    visibility: visible;
+  }
+
+  35.294% {
+    clip-path: inset(0 0 0 0);
+    visibility: visible;
+  }
+
+  /* 1.5 → 2s: hold */
+  47.059% {
+    clip-path: inset(0 0 0 0);
+    visibility: visible;
+  }
+
+  /* 2s: disappear */
+  47.06% {
+    visibility: hidden;
+  }
+
+  /* Stay hidden for the rest of the cycle */
+  100% {
+    visibility: hidden;
+  }
+}
+
+/* =========================
+   Backward arrow
+
+   <===================
+   ========================= */
+
+.arrow-backward {
+  clip-path: inset(0 0 0 100%);
+
+  animation: arrow-backward-animation 4.25s steps(15) infinite;
+}
+
+@keyframes arrow-backward-animation {
+  /* Hidden initially */
+  0%,
+  47.059% {
+    clip-path: inset(0 0 0 100%);
+    visibility: hidden;
+  }
+
+  /* Start appearing at 2s */
+  47.06% {
+    visibility: visible;
+    clip-path: inset(0 0 0 100%);
+  }
+
+  /* 2 → 3.5s: reveal */
+  82.353% {
+    visibility: visible;
+    clip-path: inset(0 0 0 0);
+  }
+
+  /* Hold */
+  100% {
+    visibility: visible;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* =========================
+   Third line
+   ========================= */
+
+.third-line {
+  position: relative;
+  width: 15ch;
+  height: 1.2em;
+}
+
+.description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10ch;
+  overflow: hidden;
+}
+
+/* =========================
+   DISRUPTION
+   ========================= */
+
+.description-forward {
+  clip-path: inset(0 100% 0 0);
+
+  animation: description-forward-animation 4.25s steps(10) infinite;
+}
+
+@keyframes description-forward-animation {
+  /* 0 → 0.5s: reveal */
+  0% {
+    clip-path: inset(0 100% 0 0);
+    visibility: visible;
+  }
+
+  11.765% {
+    clip-path: inset(0 0 0 0);
+    visibility: visible;
+  }
+
+  /* Hold until 2s */
+  47.059% {
+    clip-path: inset(0 0 0 0);
+    visibility: visible;
+  }
+
+  /* 2s: disappear */
+  47.06% {
+    visibility: hidden;
+  }
+
+  100% {
+    visibility: hidden;
+  }
+}
+
+/* =========================
+   CORRECTION
+   ========================= */
+
+/* =========================
+   CORRECTION
+   ========================= */
+
+.description-backward {
+  right: 0;
+  left: auto;
+
+  text-align: right;
+
+  clip-path: inset(0 0 0 100%);
+
+  animation: description-backward-animation 4.25s steps(10) infinite;
+}
+
+@keyframes description-backward-animation {
+  /* Hidden until 2s */
+  0%,
+  47.059% {
+    clip-path: inset(0 0 0 100%);
+    visibility: hidden;
+  }
+
+  /* 2s: become visible */
+  47.06% {
+    visibility: visible;
+    clip-path: inset(0 0 0 100%);
+  }
+
+  /* 2 → 2.5s: reveal from LEFT to RIGHT */
+  58.824% {
+    visibility: visible;
+    clip-path: inset(0 0 0 0);
+  }
+
+  /* Hold */
+  100% {
+    visibility: visible;
+    clip-path: inset(0 0 0 0);
+  }
+}
