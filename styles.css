@@ -96,8 +96,15 @@ main {
 /*
  * Step navigation.
  *
- * The navigation stays visible at the top of the viewport
- * while the user scrolls through a step page.
+ * The navigation stays in the normal document flow using
+ * position: sticky. This prevents the page from jumping
+ * when the navigation appears or disappears.
+ *
+ * JavaScript adds/removes .nav-visible depending on the
+ * user's scroll direction.
+ *
+ * The navigation starts visible, hides while scrolling down,
+ * and reappears while scrolling up.
  */
 .step-navigation {
   position: sticky;
@@ -114,6 +121,23 @@ main {
   background: #fff;
   border-bottom: 1px solid #ccc;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+
+  transform: translateY(0);
+  transition: transform 0.25s ease;
+}
+
+/*
+ * Hide the navigation above the viewport while scrolling down.
+ */
+.step-navigation.nav-hidden {
+  transform: translateY(-100%);
+}
+
+/*
+ * Show the navigation when scrolling up.
+ */
+.step-navigation.nav-visible {
+  transform: translateY(0);
 }
 
 .step-navigation a {
@@ -215,19 +239,14 @@ ol.references a[href*=".PDF#"]::after {
  * On small screens, keep the navigation on one line
  * and allow the user to swipe horizontally through it.
  *
- * This prevents the sticky navigation from taking up
- * several rows of the screen.
+ * This prevents the navigation from taking up several
+ * rows of the screen.
  */
 @media (max-width: 600px) {
   .step-navigation {
     flex-wrap: nowrap;
     overflow-x: auto;
     justify-content: flex-start;
-
-    /*
-     * Hide the scrollbar while keeping horizontal scrolling
-     * available on browsers that support this property.
-     */
     scrollbar-width: none;
   }
 

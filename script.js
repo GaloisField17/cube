@@ -1,4 +1,10 @@
 $(document).ready(function () {
+  /*
+   * -------------------------------------------------------
+   * Cube animation handling
+   * -------------------------------------------------------
+   */
+
   const cubes = document.querySelectorAll(
     '.roofpig[id$="-play"], .roofpig[id$="-repeat"]',
   );
@@ -39,4 +45,74 @@ $(document).ready(function () {
   cubes.forEach(function (cube) {
     observer.observe(cube);
   });
+
+  /*
+   * -------------------------------------------------------
+   * Scroll-direction navigation
+   * -------------------------------------------------------
+   *
+   * Navigation behavior:
+   *
+   * - Page loads with navigation visible.
+   * - Scroll down → navigation hides.
+   * - Scroll up → navigation appears.
+   * - Reach the top → navigation is visible normally.
+   *
+   * The navigation uses position: sticky in CSS, so it
+   * remains in the document flow and does not cause the
+   * page to jump when it appears/disappears.
+   */
+
+  const navigation = document.querySelector(".step-navigation");
+
+  if (navigation) {
+    let lastScrollY = window.scrollY;
+    const scrollThreshold = 10;
+
+    window.addEventListener(
+      "scroll",
+      function () {
+        const currentScrollY = window.scrollY;
+        const scrollDifference = currentScrollY - lastScrollY;
+
+        /*
+         * At the very top of the page, make sure the
+         * navigation is visible.
+         */
+        if (currentScrollY <= 0) {
+          navigation.classList.remove("nav-hidden");
+          navigation.classList.add("nav-visible");
+
+          lastScrollY = currentScrollY;
+          return;
+        }
+
+        /*
+         * Ignore tiny movements so the navigation doesn't
+         * flicker from small changes in scroll position.
+         */
+        if (Math.abs(scrollDifference) < scrollThreshold) {
+          return;
+        }
+
+        /*
+         * Scrolling upward → show navigation.
+         */
+        if (scrollDifference < 0) {
+          navigation.classList.remove("nav-hidden");
+          navigation.classList.add("nav-visible");
+        } else {
+
+        /*
+         * Scrolling downward → hide navigation.
+         */
+          navigation.classList.remove("nav-visible");
+          navigation.classList.add("nav-hidden");
+        }
+
+        lastScrollY = currentScrollY;
+      },
+      { passive: true },
+    );
+  }
 });
