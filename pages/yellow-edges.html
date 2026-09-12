@@ -31,9 +31,10 @@
       </nav>
 
       <h1>The Yellow Edges</h1>
+
       <div class="step">
         <div class="step-text">
-          <p>Finsihing this section will complete our cube.</p>
+          <p>At the end of this step, the cube will be completely solved.</p>
         </div>
 
         <div class="step-cubes">
@@ -47,15 +48,19 @@
           </div>
         </div>
       </div>
+
       <h2>One Edge in Correct Position</h2>
+
       <div class="step">
         <div class="step-text">
           <p>
-            When there is an edge in correct position, we rotate the cube so the
-            solved lateral face is the Back face.
+            When there is an edge in the correct position, we rotate the cube so
+            the solved lateral face is the Back face.
           </p>
+
           <p>In short, we rotate our cube as one of the following examples:</p>
         </div>
+
         <div class="step-cubes horizontal">
           <div class="step-cube">
             <div
@@ -64,6 +69,7 @@
               data-config="setupmoves=|colored=u- u u*/c Bu|hover=far|speed=900"
             ></div>
           </div>
+
           <div class="step-cube">
             <div
               class="roofpig custom"
@@ -71,6 +77,7 @@
               data-config="setupmoves=y|colored=u- u u*/c Lu|hover=far|speed=900"
             ></div>
           </div>
+
           <div class="step-cube">
             <div
               class="roofpig custom"
@@ -78,6 +85,7 @@
               data-config="setupmoves=y2|colored=u- u u*/c Fu|hover=far|speed=900"
             ></div>
           </div>
+
           <div class="step-cube">
             <div
               class="roofpig custom"
@@ -87,22 +95,28 @@
           </div>
         </div>
       </div>
+
       <p>
-        If none of the edges are in correction position, we jump straight into
+        If none of the edges are in the correct position, we jump straight into
         the algorithm.
       </p>
+
       <h2>Algorithm: F2 U L R' F2 R L' U F2</h2>
-      <p>
-        When we have our solved face at the back, we apply the following
-        algorithm:
-      </p>
-
-      <p style="text-align: center"><code>F2 U L R' F2 R L' U F2</code></p>
 
       <p>
-        We repeatedly apply this algorithm up to 3 times, rotating the cube so
-        the solved lateral face is on the back each time.
+        When we have a solved lateral face, we rotate the cube so that face is
+        on the Back face and then apply the following algorithm:
       </p>
+
+      <p style="text-align: center">
+        <code>F2 U L R' F2 R L' U F2</code>
+      </p>
+
+      <p>
+        We repeat the algorithm up to three times, rotating the cube so that a
+        solved lateral face is on the Back face before each application.
+      </p>
+
       <div class="step-cubes horizontal">
         <div class="step-cube-titled">
           <div
@@ -110,31 +124,125 @@
             style="--w: 300px; --h: 300px"
             data-config="setupmoves=F2 U' L R' F2 R L' U F2 F2 U' L R' F2 R L' U F2|alg=F2 U L R' F2 R L' U F2|flags=showalg|hover=far|speed=900"
           ></div>
+
           <div class="cube-title">
             <br /><br /><br />
             One edge in correct position.
           </div>
         </div>
-        <div class="step-cube-titled">
+
+        <div id="ex-no-correct-edges" class="step-cube-titled">
           <div
             class="roofpig custom"
             style="--w: 300px; --h: 300px"
             data-config="setupmoves=F2 U L R' F2 R L' U F2 y2 F2 U' L R' F2 R L' U' F2 F2 U L R' F2 R L' U F2 y2 F2 U L R' F2 R L' U F2 F2 U L R' F2 R L' U F2|alg=F2 U L R' F2 R L' U F2 y2 F2 U L R' F2 R L' U F2 F2 U L R' F2 R L' U F2|flags=showalg|hover=far|speed=900"
           ></div>
+
           <div class="cube-title">
             <br /><br /><br />
             No edges in correct position.
           </div>
         </div>
       </div>
-      <div class="step-cubes">
-        <div class="step-cube">
+
+      <p>
+        Note that the direction of <code>U</code> in the algorithm determines
+        whether the edge on the Front face moves to the left or right.
+      </p>
+
+      <p>Using</p>
+
+      <p style="text-align: center">
+        <code>F2 U L R' F2 R L' U F2</code>
+      </p>
+
+      <p>places the edge on the Front face to the left, and using</p>
+
+      <p style="text-align: center">
+        <code>F2 U' L R' F2 R L' U' F2</code>
+      </p>
+
+      <p>places it on the right.</p>
+
+      <div class="step-cubes horizontal">
+        <div class="step-cube-titled">
           <div
-            id="final-repeat"
             class="roofpig custom"
-            style="--w: 50px; --h: 50px; background-color: #b0ccd6"
-            data-config="colored=*|alg=y y y y x x x x|hover=none|speed=300"
+            style="--w: 300px; --h: 300px"
+            data-config="setupmoves=|alg=F2 U L R' F2 R L' U F2|solved=Fdl Fdr Rdf Rdb Bdr Bdl Ldf Ldb Fd Rd Bd Ld Fur Ful Ruf Rub Luf Lub Bur Bul Bu B FR FL LB RB|flags=showalg|hover=far|speed=900"
           ></div>
+
+          <div class="cube-title">
+            <br /><br /><br />
+            U direction.
+          </div>
+        </div>
+
+        <div class="step-cube-titled">
+          <div
+            class="roofpig custom"
+            style="--w: 300px; --h: 300px"
+            data-config="setupmoves=|alg=F2 U' L R' F2 R L' U' F2|solved=Fdl Fdr Rdf Rdb Bdr Bdl Ldf Ldb Fd Rd Bd Ld Fur Ful Ruf Rub Luf Lub Bur Bul Bu B FR FL LB RB|flags=showalg|hover=far|speed=900"
+          ></div>
+
+          <div class="cube-title">
+            <br /><br /><br />
+            U' direction.
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-text">
+          <p>
+            It took us 28 moves to solve
+            <a href="#ex-no-correct-edges">this previous example</a> by
+            repeatedly applying the algorithm 3 times in the <code>U</code>
+            direction.
+          </p>
+
+          <p>
+            We see that using the algorithm in the <code>U'</code> direction
+            solves the same cube in 19 moves.
+          </p>
+        </div>
+
+        <div class="step-cubes horizontal">
+          <div class="step-cube">
+            <div
+              class="roofpig custom"
+              style="--w: 300px; --h: 300px"
+              data-config="setupmoves=F2 U L R' F2 R L' U F2 y2 F2 U' L R' F2 R L' U' F2 F2 U' L R' F2 R L' U' F2 y' F2 U' L R' F2 R L' U' F2|alg=F2 U' L R' F2 R L' U' F2 y' F2 U' L R' F2 R L' U' F2|flags=showalg|hover=far|speed=900"
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step three-column">
+        <div class="step-cubes">
+          <div class="step-cube">
+            <div
+              id="final-left-repeat"
+              class="roofpig custom"
+              style="--w: 150px; --h: 150px; background-color: #b0ccd6"
+              data-config="colored=*|alg=y y y y x x x x|hover=none|speed=600"
+            ></div>
+          </div>
+        </div>
+
+        <div class="step-text">
+          <p>Good work, we are done.</p>
+        </div>
+
+        <div class="step-cubes">
+          <div class="step-cube">
+            <div
+              id="final-right-repeat"
+              class="roofpig custom"
+              style="--w: 150px; --h: 150px; background-color: #b0ccd6"
+              data-config="colored=*|alg=x x x x y y y y|hover=none|speed=600"
+            ></div>
+          </div>
         </div>
       </div>
     </main>

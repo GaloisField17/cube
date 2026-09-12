@@ -57,8 +57,8 @@
             face.
           </p>
           <p>
-            Depending on the orientation of edges on the Up face, we will set up
-            our moves as follows:
+            Depending on the position of the edges on the Up face, we will set
+            up our moves as follows:
           </p>
         </div>
 
@@ -98,7 +98,7 @@
       <div class="step">
         <div class="step-text">
           <p>
-            Its color on the Up face determines whether the edge will be
+            The color of its Up-face facelet determines whether the edge will be
             inserted into the Right face or the Left face.
           </p>
 
@@ -107,13 +107,13 @@
             face. Thus, the edge will be inserted into the Right face.
           </p>
 
-          <p>We therefore use the Right Algorithm as follows:</p>
+          <p>We therefore use the Right algorithm:</p>
 
           <p style="font-size: 24px; text-align: center">
             <code>U R U' R'&nbsp;&nbsp;&nbsp;U' F' U F</code>.
           </p>
 
-          <p>Otherwise, we use the Left Algorithm.</p>
+          <p>Otherwise, we use the Left algorithm:</p>
 
           <p style="font-size: 24px; text-align: center">
             <code>U' L' U L&nbsp;&nbsp;&nbsp;U F U' F'</code>.
@@ -145,8 +145,8 @@
         <div class="step-text">
           <p>
             If every edge on the Up face has yellow on it, we use either the
-            Right or Left algorithm depending on the position of the unsolved
-            edge to bring it onto the Up face.
+            Right or Left algorithm, depending on the position of the unsolved
+            edge, to bring it onto the Up face.
           </p>
           <p>
             In this case, the unsolved edge is on the Right face. Therefore, we
@@ -164,16 +164,18 @@
           </div>
         </div>
       </div>
+
       <p>
-        Note that since every edge on the Up face has yellow, we do not need to
-        perform the first <code>U</code> move in the Right algorithm. Our goal
-        is simply to bring the unsolved edge onto the Up face, so it does not
-        matter which Up-face edge is displaced.
+        Note that since every edge on the Up face contains yellow, we do not
+        need to perform the first <code>U</code> move in the Right algorithm.
+        Our goal is simply to bring the unsolved edge onto the Up face, so it
+        does not matter which edge on the Up face is displaced.
       </p>
+
       <p>
-        We then match the edge with its center and rotate the cube so that the
-        matched edge is on the Front face. Finally, we use the Right or Left
-        algorithm as above.
+        We then match the edge with its corresponding center and rotate the cube
+        so that the matched edge is on the Front face. Finally, we use the Right
+        or Left algorithm as above.
       </p>
     </main>
 

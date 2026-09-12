@@ -159,6 +159,26 @@ main {
   background: #1e293b;
 }
 
+/*
+ * Three-column step variant.
+ *
+ * Used when the layout should be:
+ *
+ * Cube | Text | Cube
+ */
+.step.three-column {
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 1.5fr) minmax(0, 1fr);
+  gap: 30px;
+}
+
+.step.three-column .step-text {
+  text-align: center;
+}
+
+.step.three-column .step-cubes {
+  margin-bottom: 0;
+}
+
 /* --- In-text Citations Style --- */
 sup.reference {
   font-size: 0.75em;
