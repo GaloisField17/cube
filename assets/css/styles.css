@@ -1,0 +1,544 @@
+/* ==========================================================================
+Theme Switcher
+========================================================================== */
+
+.theme-switcher {
+  position: absolute;
+  top: 18px;
+  right: 32px;
+
+  display: flex;
+  gap: 6px;
+  align-items: center;
+
+  z-index: 2;
+}
+
+.theme-button {
+  width: 28px;
+  height: 16px;
+
+  padding: 0;
+
+  border: 2px solid;
+  border-radius: 999px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    filter 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.theme-button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+}
+
+.theme-button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.theme-default {
+  background: #0b1120;
+  border-color: #e2e8f0;
+}
+
+.theme-warm {
+  background: #6b3e24;
+  border-color: #f5d0a9;
+}
+
+.theme-forest {
+  background: #28543d;
+  border-color: #b7d7c2;
+}
+
+.theme-button.active {
+  border-color: #fff;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.4),
+    0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+/* Hide the currently selected theme. */
+.theme-button.theme-current {
+  display: none;
+}
+
+/* ==========================================================================
+Theme Colors
+========================================================================== */
+
+:root {
+  --page-bg: #fff;
+  --text: #202122;
+
+  --header-bg: #0b1120;
+  --header-text: #fff;
+
+  --footer-bg: #0b1120;
+  --footer-text: #fff;
+
+  --nav-bg: #fff;
+  --nav-border: #ccc;
+  --nav-shadow: rgba(0, 0, 0, 0.15);
+
+  --nav-link-bg: #0b1120;
+  --nav-link-text: #fff;
+  --nav-link-hover: #1e293b;
+
+  --nav-active-bg: #858891;
+
+  --nav-top-text: #64748b;
+  --nav-top-border: #e2e8f0;
+  --nav-top-hover-bg: #64748b;
+
+  --nav-introduction-bg: #0f766e;
+  --nav-introduction-hover: #115e59;
+
+  --link: #36c;
+  --reference-text: #54595d;
+
+  --cube-bg: #cc9;
+}
+
+/* ==========================================================================
+Warm Theme
+========================================================================== */
+
+:root[data-theme="warm"] {
+  --page-bg: #fffaf5;
+  --text: #3b2a20;
+
+  --header-bg: #4a2c1a;
+  --header-text: #fffaf5;
+
+  --footer-bg: #4a2c1a;
+  --footer-text: #fffaf5;
+
+  --nav-bg: #fff8f0;
+  --nav-border: #e5d5c5;
+  --nav-shadow: rgba(74, 44, 26, 0.15);
+
+  --nav-link-bg: #6b3e24;
+  --nav-link-text: #fffaf5;
+  --nav-link-hover: #8a5230;
+
+  --nav-active-bg: #b8753c;
+
+  --nav-top-text: #8a6348;
+  --nav-top-border: #dfcbb8;
+  --nav-top-hover-bg: #b8753c;
+
+  --nav-introduction-bg: #a85d32;
+  --nav-introduction-hover: #884824;
+
+  --link: #9a4d20;
+  --reference-text: #66554a;
+
+  --cube-bg: #ead8bd;
+}
+
+/* ==========================================================================
+Forest Theme
+========================================================================== */
+
+:root[data-theme="forest"] {
+  --page-bg: #f7faf7;
+  --text: #24352b;
+
+  --header-bg: #1f3a2b;
+  --header-text: #f7faf7;
+
+  --footer-bg: #1f3a2b;
+  --footer-text: #f7faf7;
+
+  --nav-bg: #f5f9f6;
+  --nav-border: #cbdacf;
+  --nav-shadow: rgba(31, 58, 43, 0.15);
+
+  --nav-link-bg: #28543d;
+  --nav-link-text: #f7faf7;
+  --nav-link-hover: #34704f;
+
+  --nav-active-bg: #668f72;
+
+  --nav-top-text: #52705d;
+  --nav-top-border: #cbdacf;
+  --nav-top-hover-bg: #668f72;
+
+  --nav-introduction-bg: #39735a;
+  --nav-introduction-hover: #2c5b46;
+
+  --link: #286644;
+  --reference-text: #53645a;
+
+  --cube-bg: #dce8d9;
+}
+
+/* ==========================================================================
+Global / Layout
+========================================================================== */
+
+body {
+  background: var(--page-bg);
+  color: var(--text);
+}
+
+main {
+  font-size: 1.5em;
+}
+
+/* ==========================================================================
+Header / Footer
+========================================================================== */
+
+header,
+footer {
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 32px;
+}
+
+footer {
+  background: var(--footer-bg);
+  color: var(--footer-text);
+}
+
+header {
+  position: relative;
+}
+
+header h1 {
+  margin: 0;
+  padding-right: 120px;
+}
+
+/* ==========================================================================
+Language
+========================================================================== */
+
+.language-flag {
+  position: absolute;
+
+  /*
+   * Keep the flag below the theme buttons.
+   * The theme buttons occupy the top-right area.
+   */
+  right: 32px;
+  bottom: 12px;
+
+  display: block;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+  overflow: hidden;
+
+  background-size: cover !important;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  z-index: 2;
+
+  transition: filter 0.2s ease;
+}
+
+.language-flag:hover {
+  filter: brightness(0.75);
+}
+
+/* ==========================================================================
+Custom Components
+========================================================================== */
+
+.roofpig.custom {
+  width: var(--w) !important;
+  height: var(--h) !important;
+  margin-top: 20px !important;
+  background-color: var(--cube-bg);
+}
+
+/* ==========================================================================
+Steps
+========================================================================== */
+
+.step {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(0, 2fr);
+  gap: 30px;
+  align-items: center;
+  margin-bottom: 50px;
+  line-height: 1.3;
+}
+
+/* --------------------------------------------------------------------------
+Step Cubes
+-------------------------------------------------------------------------- */
+
+.step-cubes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  min-width: 0;
+  margin-bottom: 30px;
+}
+
+.step-cubes.horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.step-cube {
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+
+.step-cube-titled {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+}
+
+.cube-title {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.narrow {
+  max-width: 250px;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+Three-Column Step Variant
+-------------------------------------------------------------------------- */
+
+.step.three-column {
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(220px, 1.5fr)
+    minmax(0, 1fr);
+  gap: 30px;
+}
+
+.step.three-column .step-text {
+  text-align: center;
+}
+
+.step.three-column .step-cubes {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+Step Navigation
+========================================================================== */
+
+.step-navigation {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin: 0 0 40px;
+  padding: 12px;
+
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+  box-shadow: 0 2px 5px var(--nav-shadow);
+
+  transform: translateY(0);
+  transition: transform 0.25s ease;
+}
+
+.step-navigation.nav-hidden {
+  transform: translateY(-100%);
+}
+
+.step-navigation.nav-visible {
+  transform: translateY(0);
+}
+
+.step-navigation a {
+  padding: 8px 12px;
+
+  background: var(--nav-link-bg);
+  color: var(--nav-link-text);
+
+  text-decoration: none;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.step-navigation a:hover {
+  background: var(--nav-link-hover);
+}
+
+.step-navigation a.active {
+  background: var(--nav-active-bg);
+  color: #fff;
+  box-shadow: inset 0 -3px 0 #fff;
+}
+
+/* Return to top */
+
+.step-navigation .nav-top {
+  background: transparent;
+  color: var(--nav-top-text);
+  border: 1px solid var(--nav-top-border);
+}
+
+.step-navigation .nav-top:hover {
+  background: var(--nav-top-hover-bg);
+  color: #fff;
+}
+
+/* Return to introduction */
+
+.step-navigation .nav-introduction {
+  background: var(--nav-introduction-bg);
+  color: #fff;
+}
+
+.step-navigation .nav-introduction:hover {
+  background: var(--nav-introduction-hover);
+}
+
+/* ==========================================================================
+References / Citations
+========================================================================== */
+
+sup.reference {
+  font-size: 0.75em;
+  line-height: 0;
+}
+
+sup.reference a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+sup.reference a:hover {
+  text-decoration: underline;
+}
+
+ol.references {
+  font-size: 0.8em;
+  color: var(--reference-text);
+}
+
+ol.references li {
+  margin-bottom: 0.5em;
+}
+
+ol.references a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+ol.references a:hover {
+  text-decoration: underline;
+}
+
+.mw-backlink {
+  font-family: monospace;
+  font-size: 0.85em;
+}
+
+/* ==========================================================================
+PDF Links
+========================================================================== */
+
+ol.references a[href$=".pdf"]::after,
+ol.references a[href*=".pdf?"]::after,
+ol.references a[href*=".pdf#"]::after,
+ol.references a[href$=".PDF"]::after,
+ol.references a[href*=".PDF?"]::after,
+ol.references a[href*=".PDF#"]::after {
+  content: " (PDF)";
+  display: inline-block;
+
+  margin-left: 8px;
+  padding-left: 24px;
+
+  color: #202122;
+
+  background: url("https://upload.wikimedia.org/wikipedia/commons/4/4d/Icon_pdf_file.png")
+    no-repeat left center !important;
+  background-size: 18px 18px !important;
+}
+
+/* ==========================================================================
+Responsive
+========================================================================== */
+
+@media (max-width: 900px) {
+  .step {
+    grid-template-columns: 1fr;
+  }
+
+  .step-cubes,
+  .step-cubes.horizontal {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+Small Screens
+-------------------------------------------------------------------------- */
+
+@media (max-width: 600px) {
+  /*
+   * Theme buttons remain at the top-right.
+   * The flag stays below them.
+   */
+  .theme-switcher {
+    top: 12px;
+    right: 20px;
+  }
+
+  .language-flag {
+    right: 20px;
+    bottom: 20px;
+  }
+
+  /*
+   * Give the heading enough room so it doesn't collide
+   * with the controls.
+   */
+  header h1 {
+    padding-right: 20px;
+    padding-bottom: 70px;
+  }
+
+  .step-navigation {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    scrollbar-width: none;
+  }
+
+  .step-navigation::-webkit-scrollbar {
+    display: none;
+  }
+
+  .step-navigation a {
+    flex: 0 0 auto;
+  }
+}
