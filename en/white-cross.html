@@ -1,0 +1,327 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>The White Cross — Beginner's Rubik's Cube Method</title>
+
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="../assets/css/animation.css" />
+    <link rel="stylesheet" href="../assets/css/flag-icons.css" />
+
+    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/theme.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="../assets/js/roofpig_and_three.min.js"></script>
+  </head>
+
+  <body>
+    <header id="header">
+      <h1>The White Cross</h1>
+
+      <div class="theme-switcher">
+        <button
+          type="button"
+          class="theme-button theme-default"
+          data-theme="default"
+          aria-label="Default theme"
+          title="Default theme"
+        ></button>
+
+        <button
+          type="button"
+          class="theme-button theme-warm"
+          data-theme="warm"
+          aria-label="Warm theme"
+          title="Warm theme"
+        ></button>
+
+        <button
+          type="button"
+          class="theme-button theme-forest"
+          data-theme="forest"
+          aria-label="Forest theme"
+          title="Forest theme"
+        ></button>
+      </div>
+
+      <a
+        href="../tr/white-cross.html"
+        class="fib fi-tr language-flag"
+        aria-label="Türkçe"
+        title="Türkçe"
+      ></a>
+    </header>
+
+    <main>
+      <nav class="step-navigation">
+        <a
+          href="#header"
+          class="nav-top"
+          title="Go to top"
+          aria-label="Go to top"
+          >↑</a
+        >
+        <a href="introduction.html" class="nav-introduction">Introduction</a>
+        <a href="white-cross.html" class="active">White Cross</a>
+        <a href="white-corners.html">White Corners</a>
+        <a href="second-layer.html">Second Layer</a>
+        <a href="yellow-cross.html">Yellow Cross</a>
+        <a href="yellow-face.html">Yellow Face</a>
+        <a href="yellow-corners.html">Yellow Corners</a>
+        <a href="yellow-edges.html">Yellow Edges</a>
+      </nav>
+      <div class="content">
+        <div class="step left">
+          <div class="step-text">
+            <p>
+              At the end of this step, we will have a white cross on the Up
+              face, with each white edge matched to its corresponding center.
+            </p>
+          </div>
+
+          <div class="step-cubes">
+            <div class="step-cube">
+              <div
+                id="white-cross-repeat"
+                class="roofpig custom"
+                style="--w: 300px; --h: 300px; background-color: #b0ccd6"
+                data-config="setupmoves=U|alg=y' y' y' y'|colored=D*/e */m|hover=none|pov=Dbr|speed=1500"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-text">
+            <p>
+              We start by rotating the cube so that the white center is on the
+              Up face.
+            </p>
+            <p>
+              Many other beginner methods start with the white center on the
+              Down face. However, when starting out, it's often easier to work
+              with the white center on the Up face as it is easier to see.
+            </p>
+          </div>
+
+          <div class="step-cubes">
+            <div class="step-cube">
+              <div
+                class="roofpig custom"
+                style="--w: 300px; --h: 300px"
+                data-config="setupmoves=x2|colored=*/m|hover=far|flags=canvas"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <h2>White Edge on the Up or Down Face</h2>
+
+        <div class="step">
+          <div class="step-text">
+            <p>
+              If a white edge is on the Up face, we first try to match it with
+              its corresponding center by rotating the Up face.
+            </p>
+          </div>
+
+          <div class="step-cubes">
+            <div class="step-cube">
+              <div
+                class="roofpig custom"
+                style="--w: 300px; --h: 300px"
+                data-config="setupmoves=D' D|alg=D |colored=Db Bd */m|tweaks= X:Db X:Bd X:B|pov=Dbr|hover=far|speed=900"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-text">
+            <p>
+              If we cannot match the white edge without disturbing an already
+              solved edge on the Up face, we first bring the white edge to the
+              Down face by rotating the face it is on twice.
+            </p>
+
+            <p>
+              We then rotate the Down face to match it with its corresponding
+              center.
+            </p>
+
+            <p>
+              Finally, we rotate the appropriate face twice to bring the edge to
+              the Up face.
+            </p>
+          </div>
+
+          <div class="step-cubes">
+            <div class="step-cube">
+              <div
+                class="roofpig custom"
+                style="--w: 300px; --h: 300px"
+                data-config="setupmoves=L' R2' U2 L2 L2 U2 R2|alg=L2 U2 R2|algtext=L2 D2 R2|colored=Dr Rd Df Fd Db Bd */m|tweaks= X:Dr X:Rd X:R|flags=showalg|pov=Dbr|hover=far|speed=1000"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <h2>White Edge on the Middle Layer</h2>
+
+        <div class="step">
+          <div class="step-text">
+            <p>
+              In this case, we first try to bring the white edge to the Down
+              face by rotating the face it is on.
+            </p>
+
+            <p>
+              We then match it with its corresponding center by rotating the
+              Down face.
+            </p>
+
+            <p>
+              Finally, we bring the edge to the Up face by rotating the
+              appropriate face twice.
+            </p>
+          </div>
+
+          <div class="step-cubes">
+            <div class="step-cube">
+              <div
+                class="roofpig custom"
+                style="--w: 300px; --h: 300px"
+                data-config="setupmoves=D' R R U' B2|alg= R U' B2|algtext=R D' F2|flags=showalg|colored=Db Bd */m|tweaks= X:Db X:Bd X:B|pov=Dbr|hover=far|speed=900"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-text">
+            <p>
+              If bringing the white edge to the Down face disturbs an already
+              solved white edge on the Up face, we restore it at the end by
+              performing the inverse rotation.
+            </p>
+
+            <p>
+              In this example, the white-green edge was disturbed by
+              <code>R</code>. We therefore perform <code>R'</code> at the end to
+              restore it.
+            </p>
+          </div>
+
+          <div class="step-cubes">
+            <div class="step-cube">
+              <div
+                class="roofpig custom"
+                style="--w: 300px; --h: 300px"
+                data-config="setupmoves=D' R D R U' B2 R'|alg= R U' B2 R'|algtext=R D' F2 R'|flags=showalg|colored=Db Bd Dr Rd */m|tweaks= X:Db X:Bd X:B|pov=Dbr|hover=far|speed=900"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <h2>White Edge on a Side Face</h2>
+
+        <div class="step">
+          <div class="step-text">
+            <p>
+              If the white edge is on one of the four side faces, we first bring
+              it to the middle layer by rotating the face it is on.
+            </p>
+
+            <p>
+              We then rotate the Right or Left face to bring the edge to the
+              Down face. From there, we match it with its corresponding center
+              by rotating the Down face.
+            </p>
+
+            <p>
+              Finally, we bring the edge to the Up face by rotating the
+              appropriate face.
+            </p>
+          </div>
+
+          <div class="step-cubes">
+            <div class="step-cube">
+              <div
+                class="roofpig custom"
+                style="--w: 300px; --h: 300px"
+                data-config="setupmoves=D R' D B D2 B' R' U F2|alg=B' R' U F2|algtext=F' R' D B2|flags=showalg|colored=Df Fd */m|tweaks= X:Df X:Fd X:F|pov=Dbr|hover=far|speed=900"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-text">
+            <p>
+              If bringing the white edge down disturbs already solved white
+              edges on the Up face, we restore them at the end by performing the
+              inverse rotations.
+            </p>
+
+            <p>
+              In this example, two of the solved white edges were disturbed.
+              First, the white-orange edge by <code>F'</code>, and then the
+              white-green edge by <code>R'</code>. We therefore first perform
+              <code>R</code>, then <code>F</code> at the end to restore them.
+            </p>
+          </div>
+
+          <div class="step-cubes">
+            <div class="step-cube">
+              <div
+                class="roofpig custom"
+                style="--w: 300px; --h: 300px"
+                data-config="setupmoves=D R' D B D2 B' R' U F2 R B|alg=B' R' U F2 R B|algtext=F' R' D B2 R F|flags=showalg|colored=Df Fd Db Bd Dr Rd */m|tweaks= X:Df X:Fd X:F|pov=Dbr|hover=far|speed=900"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-text">
+            <p>
+              Note that for longer sequences, the order of corrections matters.
+              To undo a sequence of disturbances, apply the corrections in
+              reverse order, using the inverse of each move.
+            </p>
+
+            <p>
+              In the example on the right, the algorithm
+              <code>R F2 D L</code> is applied to a solved cube. To restore the
+              cube to its solved state, we must apply the corrections in reverse
+              order: <code>L' D' F2 R'</code>.
+            </p>
+          </div>
+
+          <div class="step-cubes">
+            <div class="step-cube">
+              <div
+                class="roofpig custom"
+                style="--w: 300px; --h: 300px"
+                data-config="setupmoves=R F2 D L L' D' F2 R'|alg=R F2 D L L' D' F2 R'|flags=showalg|hover=far|speed=900"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div style="text-align: right">
+        <a href="https://github.com/GaloisField17/cube" style="color: pink">
+          GitHub
+        </a>
+      </div>
+    </footer>
+
+    <script src="../assets/js/cubes.js"></script>
+  </body>
+</html>

@@ -1,0 +1,289 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script>
+      const theme = localStorage.getItem("theme") || "dark";
+      document.documentElement.dataset.theme = theme;
+    </script>
+
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="../assets/css/animation.css" />
+    <link rel="stylesheet" href="../assets/css/flag-icons.css" />
+
+    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/theme.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="../assets/js/roofpig_and_three.min.js"></script>
+    <title>Beginner's Method for Solving the 3×3 Rubik's Cube</title>
+  </head>
+
+  <body>
+    <header id="header">
+      <h1>Beginner's Method for Solving the 3×3 Rubik's Cube</h1>
+
+      <div class="theme-switcher">
+        <button
+          type="button"
+          class="theme-button theme-default"
+          data-theme="default"
+          aria-label="Default theme"
+          title="Default theme"
+        ></button>
+
+        <button
+          type="button"
+          class="theme-button theme-warm"
+          data-theme="warm"
+          aria-label="Warm theme"
+          title="Warm theme"
+        ></button>
+
+        <button
+          type="button"
+          class="theme-button theme-forest"
+          data-theme="forest"
+          aria-label="Forest theme"
+          title="Forest theme"
+        ></button>
+      </div>
+
+      <a
+        href="../tr/introduction.html"
+        class="fib fi-tr language-flag"
+        aria-label="Türkçe"
+        title="Türkçe"
+      ></a>
+    </header>
+
+    <main>
+      <nav class="step-navigation">
+        <a
+          href="#header"
+          class="nav-top"
+          title="Go to top"
+          aria-label="Go to top"
+          >↑</a
+        >
+        <a href="#layers">Layers</a>
+        <a href="#pieces">Pieces</a>
+        <a href="#faces">Moves</a>
+        <a href="#roofpig-demo">Roofpig Demo</a>
+      </nav>
+      <div class="content">
+        <p>
+          In this tutorial, we’ll use a beginner-friendly method to solve a 3×3
+          cube using simple techniques and algorithms. No prior experience is
+          required. The tutorial includes interactive cube animations, powered
+          by
+          <a
+            href="https://github.com/larspetrus/Roofpig"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Roofpig</a
+          >, as well as illustrations to demonstrate moves and rotations.
+        </p>
+        <p>Together, we will solve the cube in seven steps:</p>
+
+        <div class="step right centered">
+          <div class="step-text">
+            <ol>
+              <li><a href="white-cross.html">The White Cross</a></li>
+              <li><a href="white-corners.html">The White Corners</a></li>
+              <li><a href="second-layer.html">The Second Layer</a></li>
+              <li><a href="yellow-cross.html">The Yellow Cross</a></li>
+              <li><a href="yellow-face.html">The Yellow Face</a></li>
+              <li><a href="yellow-corners.html">The Yellow Corners</a></li>
+              <li><a href="yellow-edges.html">The Yellow Edges</a></li>
+            </ol>
+          </div>
+          <div class="step-cubes">
+            <div class="step-cube">
+              <div
+                id="intro-cube-repeat"
+                class="roofpig"
+                style="width: 200px; height: 200px"
+                data-config="setupmoves=|alg=y y y y x x x x|hover=none|speed=1200"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <p>
+          Before we start solving the cube, we will first go over some basic
+          notation and terminology that will be used throughout the tutorial.
+        </p>
+        <h1>Notation</h1>
+        <p>
+          A standard 3×3 cube has 3 layers and 6 faces. A solved cube is a state
+          in which each face is a solid color: red, green, orange, blue, white,
+          or yellow.
+        </p>
+        <p>
+          The cube is made up of 26 smaller visible cube pieces, which can be
+          classified as center pieces, edge pieces, or corner pieces. Each type
+          of piece, as well as the layers, faces, and moves, has a
+          straightforward and unambiguous name.
+        </p>
+        <h2 id="layers">Layers</h2>
+        <p>
+          Layers are the horizontal levels of the cube. They are called
+          <strong>the bottom layer</strong>, <strong>the middle layer</strong>,
+          and <strong>the top layer</strong>. The pieces that make up each layer
+          depend on the orientation of the cube.
+        </p>
+        <div class="step-cubes horizontal">
+          <div class="step-cube-titled">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="colored=D*|flags=canvas|hover=none"
+            ></div>
+            <div class="cube-title">Bottom layer</div>
+          </div>
+          <div class="step-cube-titled">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="colored=UD*-|flags=canvas|hover=none"
+            ></div>
+            <div class="cube-title">Middle layer</div>
+          </div>
+          <div class="step-cube-titled">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="colored=U*|flags=canvas|hover=none"
+            ></div>
+            <div class="cube-title">Top layer</div>
+          </div>
+        </div>
+        <h2 id="pieces">Pieces</h2>
+        <p>
+          The cube consists of a core and 26 smaller pieces. These pieces are
+          also referred to as <em>cubies</em> in cubing communities. In this
+          tutorial, we'll simply refer to them as pieces. Each visible piece can
+          be a <strong>center piece</strong>, <strong>a corner piece</strong>,
+          or <strong>an edge piece</strong>. Each piece is characterized by its
+          type and colors.
+        </p>
+        <div class="step-cubes horizontal">
+          <div class="step-cube-titled">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="colored=U F R B L D|flags=canvas|hover=none"
+            ></div>
+            <div class="cube-title">Center pieces</div>
+          </div>
+          <div class="step-cube-titled">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="colored=*/c|flags=canvas|hover=none|"
+            ></div>
+            <div class="cube-title">Corner pieces</div>
+          </div>
+          <div class="step-cube-titled">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="colored=*/e|flags=canvas|hover=none|"
+            ></div>
+            <div class="cube-title">Edge pieces</div>
+          </div>
+        </div>
+        <p>
+          The core of the cube holds the other pieces together and allows them
+          to rotate.
+        </p>
+        <p>
+          A piece's <strong>facelet</strong> is a single colored square on its
+          face. Corner pieces have 3 facelets, edge pieces have 2, and center
+          pieces have 1.
+        </p>
+        <h2 id="faces">Faces</h2>
+        <p>
+          A <strong>face</strong> is the set of pieces covering one whole side
+          of the cube. We name the faces according to their position relative to
+          us: <strong>Front (F)</strong>, <strong>Back (B)</strong>,
+          <strong>Right (R)</strong>, <strong>Left (L)</strong>,
+          <strong>Up (U)</strong>, and <strong>Down (D)</strong>. Each face has
+          9 pieces covering its 3×3 area: 4 corner pieces, 4 edge pieces, and 1
+          center piece. In the illustrations below, the corresponding face is
+          highlighted in color.
+        </p>
+
+        <div class="step-cubes horizontal">
+          <div class="step-cube-titled">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="colored=F*|flags=canvas|hover=far|"
+            ></div>
+            <div class="cube-title">F, the Front face</div>
+          </div>
+          <div class="step-cube-titled">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="colored=U*|flags=canvas|hover=far|"
+            ></div>
+            <div class="cube-title">U, the Up face</div>
+          </div>
+          <div class="step-cube-titled">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="colored=R*|flags=canvas|hover=far|"
+            ></div>
+            <div class="cube-title">R, the Right face</div>
+          </div>
+        </div>
+        <div class="step-cubes horizontal">
+          <div class="step-cube-titled">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="colored=B*|flags=canvas|hover=far|"
+            ></div>
+            <div class="cube-title">B, the Back face</div>
+          </div>
+          <div class="step-cube-titled">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="colored=D*|flags=canvas|hover=far|"
+            ></div>
+            <div class="cube-title">D, the Down face</div>
+          </div>
+          <div class="step-cube-titled">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="colored=L*|flags=canvas|hover=far|"
+            ></div>
+            <div class="cube-title">L, the Left face</div>
+          </div>
+        </div>
+        <p>
+          These names are relative to the cube's orientation, so they can refer
+          to different physical faces when the cube is rotated.
+        </p>
+        <h2 id="moves">Moves</h2>
+        <h2 id="roofpig-demo">Roofpig Demo</h2>
+      </div>
+    </main>
+
+    <footer>
+      <div style="text-align: right">
+        <a href="https://github.com/GaloisField17/cube" style="color: pink">
+          GitHub
+        </a>
+      </div>
+    </footer>
+    <script src="../assets/js/cubes.js"></script>
+  </body>
+</html>

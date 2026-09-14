@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Animated SVG Test</title>
+  </head>
+
+  <body>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="600"
+      height="600"
+      viewBox="90 30 600 600"
+    >
+      <rect id="trigger" x="90" y="30" width="600" height="600" fill="white" />
+
+      <!-- Front -->
+      <polygon
+        points="300,300 420,300 420,420 300,420"
+        fill="none"
+        stroke="black"
+        stroke-width="3"
+      >
+        <animateTransform
+          attributeName="transform"
+          type="rotate"
+          from="0 360 360"
+          to="-360 360 360"
+          dur="20s"
+          begin="0s; trigger.click"
+          fill="freeze"
+        />
+      </polygon>
+
+      <!-- Back -->
+      <polygon
+        points="320,280 440,280 440,400 320,400"
+        fill="none"
+        stroke="black"
+        stroke-width="3"
+      >
+        <animateTransform
+          attributeName="transform"
+          type="rotate"
+          from="0 380 340"
+          to="-360 380 340"
+          dur="20s"
+          begin="0s; trigger.click"
+          fill="freeze"
+        />
+      </polygon>
+
+      <!-- Lines are created by JavaScript -->
+    </svg>
+
+    <script>
+      const trigger = document.getElementById("trigger");
+
+      /*
+       * POINTS
+       *
+       * Each point has:
+       * x, y   = its original position
+       * cx, cy = the center it rotates around
+       */
+      const points = {
+        frontNW: {
+          x: 300,
+          y: 300,
+          cx: 360,
+          cy: 360,
+        },
+
+        backNW: {
+          x: 320,
+          y: 280,
+          cx: 380,
+          cy: 340,
+        },
+
+        frontNE: {
+          x: 420,
+          y: 300,
+          cx: 360,
+          cy: 360,
+        },
+
+        backNE: {
+          x: 440,
+          y: 280,
+          cx: 380,
+          cy: 340,
+        },
+
+        // Add more points here later:
+        //
+        // frontNE: {
+        //   x: 420, y: 300,
+        //   cx: 360, cy: 360
+        // },
+      };
+
+      /*
+       * LINES
+       *
+       * Each line connects two points.
+       */
+      const lines = [
+        ["frontNW", "backNW"],
+        ["frontNE", "backNE"],
+
+        // Add more lines here later:
+        //
+        // ["frontNE", "backNE"],
+        // ["frontNW", "frontNE"],
+      ];
+
+      /*
+       * Create SVG lines
+       */
+      const svg = document.querySelector("svg");
+
+      const svgLines = lines.map(() => {
+        const line = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "line",
+        );
+
+        line.setAttribute("stroke", "red");
+        line.setAttribute("stroke-width", "3");
+
+        svg.appendChild(line);
+
+        return line;
+      });
+
+      /*
+       * Rotate a point around a center.
+       */
+      function rotate(point, angle) {
+        const r = (angle * Math.PI) / 180;
+
+        const dx = point.x - point.cx;
+        const dy = point.y - point.cy;
+
+        return {
+          x: point.cx + dx * Math.cos(r) - dy * Math.sin(r),
+          y: point.cy + dx * Math.sin(r) + dy * Math.cos(r),
+        };
+      }
+
+      /*
+       * Animation
+       */
+      let start = performance.now();
+
+      trigger.onclick = () => {
+        start = performance.now();
+      };
+
+      function draw(time) {
+        const elapsed = Math.min((time - start) / 1000, 20);
+
+        // 20 seconds = 360 degrees
+        const angle = -elapsed * 18;
+
+        /*
+         * Calculate the current position of every point.
+         */
+        const current = {};
+
+        for (const [name, point] of Object.entries(points)) {
+          current[name] = rotate(point, angle);
+        }
+
+        /*
+         * Draw every line.
+         */
+        lines.forEach((line, i) => {
+          const [a, b] = line;
+
+          svgLines[i].setAttribute("x1", current[a].x);
+          svgLines[i].setAttribute("y1", current[a].y);
+
+          svgLines[i].setAttribute("x2", current[b].x);
+          svgLines[i].setAttribute("y2", current[b].y);
+        });
+
+        if (elapsed < 20) {
+          requestAnimationFrame(draw);
+        }
+      }
+
+      requestAnimationFrame(draw);
+    </script>
+  </body>
+</html>

@@ -441,17 +441,41 @@ function svg(width, height, xmin = 50, ymin = 50, ...content) {
 
 const childrenString = "";
 
-// const childrenString = `<animateTransform
-//   attributeName="transform"
-//   type="rotate"
-//   from="0 370 350"
-//   to="-90 370 350"
-//   dur="105s"
-//   begin="0s; trigger.click"
-//   fill="freeze"
-// />
+const childrenStringPos = `<animateTransform
+  attributeName="transform"
+  type="rotate"
+  from="0 360 360"
+  to="-360 360 360"
+  dur="20s"
+  begin="0s; trigger.click"
+  fill="freeze"
+/>
 
-// `;
+`;
+
+const childrenStringNeg = `<animateTransform
+  attributeName="transform"
+  type="rotate"
+  from="0 380 340"
+  to="-360 380 340"
+  dur="20s"
+  begin="0s; trigger.click"
+  fill="freeze"
+/>
+
+`;
+
+const childrenStringGrid = `<animateTransform
+  attributeName="transform"
+  type="rotate"
+  from="0 370 350"
+  to="-360 370 350"
+  dur="20s"
+  begin="0s; trigger.click"
+  fill="freeze"
+/>
+
+`;
 
 // ─────────────────────────────────────────────
 // Draw images
@@ -472,102 +496,28 @@ const surfaceSvg = svg(
   600,
   coreCoords.x - 600 / 2,
   coreCoords.y - 600 / 2,
-  drawCircle(coreCoords.x, coreCoords.y, 0),
-  drawSurface(Bneg.corners),
-  //drawGrids(Bneg.corners, { rows: 3, cols: 3, fill: "orange" }),
-  drawSurface([Lneg.NW, Lneg.SW, Spos.SW, Spos.NW]),
-  // drawGrids([Lneg.NW, Lneg.SW, Spos.SW, Spos.NW], {
-  //   rows: 2,
-  //   cols: 3,
-  //   fill: "#07f",
-  // }),
-  drawSurface([Dneg.SW, Dneg.SE, Spos.SE, Spos.SW]),
-  // drawGrids([Dneg.SW, Dneg.SE, Spos.SE, Spos.SW], {
-  //   rows: 2,
-  //   cols: 3,
-  //   fill: "#eee",
-  // }),
-  drawGrids(
-    [Fneg.SW, Fneg.SE, Fpos.SE, Fpos.SW],
-    {
-      rows: 1,
-      cols: 3,
-      fill: "olive",
-      strokeWidth: 5,
-    },
-    childrenString,
-  ),
-
-  drawSurface(Bpos.corners, { strokeWidth: 0 }),
-  drawSurface(Sneg.corners, { strokeWidth: 0 }),
-  drawSurface(Spos.corners, { strokeWidth: 0 }),
-  drawSurface(Fneg.corners, { strokeWidth: 0 }),
-
-  drawSurface(Dpos.corners, { strokeWidth: 0 }),
-  drawSurface(Eneg.corners, { strokeWidth: 0 }),
-  drawSurface(Epos.corners, { strokeWidth: 0 }),
-  drawSurface(Uneg.corners, { strokeWidth: 0 }),
-
-  drawSurface(Lpos.corners, { strokeWidth: 0 }),
-  drawSurface(Mneg.corners, { strokeWidth: 0 }),
-  drawSurface(Mpos.corners, { strokeWidth: 0 }),
-  drawSurface(Rneg.corners, { strokeWidth: 0 }),
-
-  drawSurface([Upos.SW, Upos.SE, Spos.NE, Spos.NW]),
-  // drawGrids([Upos.SW, Upos.SE, Spos.NE, Spos.NW], {
-  //   rows: 2,
-  //   cols: 3,
-  //   fill: "gray",
-  // }),
-
-  drawSurface([Rpos.NW, Rpos.SW, Spos.SE, Spos.NE]),
-  // drawGrids([Rpos.NW, Rpos.SW, Spos.SE, Spos.NE], {
-  //   rows: 2,
-  //   cols: 3,
-  //   fill: "#0d0",
-  // }),
-  drawGrids(
-    [Fneg.NW, Fneg.SW, Fpos.SW, Fpos.NW],
-    {
-      rows: 1,
-      cols: 3,
-      fill: "olive",
-      strokeWidth: 5,
-    },
-    childrenString,
-  ),
-  drawGrids(
-    [Fneg.NW, Fneg.NE, Fpos.NE, Fpos.NW],
-    {
-      rows: 1,
-      cols: 3,
-      fill: "olive",
-      strokeWidth: 5,
-    },
-    childrenString,
-  ),
-  drawGrids(
-    [Fneg.NE, Fneg.SE, Fpos.SE, Fpos.NE],
-    {
-      rows: 1,
-      cols: 3,
-      fill: "olive",
-      strokeWidth: 5,
-    },
-    childrenString,
-  ),
-
-  // drawSurface(Fpos.corners),
-  drawGrids(
-    Fpos.corners,
-    {
-      rows: 3,
-      cols: 3,
-      fill: "olive",
-      strokeWidth: 5,
-    },
-    childrenString,
-  ),
+  drawSurface(Fneg.corners, {}, childrenStringNeg),
+  drawSurface(Fpos.corners, {}, childrenStringPos),
+  // drawGrids(
+  //   [Fneg.NW, Fneg.NE, Fpos.NE, Fpos.NW],
+  //   { rows: 1, cols: 3 },
+  //   childrenStringGrid,
+  // ),
+  // drawGrids(
+  //   [Fneg.SW, Fneg.SE, Fpos.SE, Fpos.SW],
+  //   { rows: 1, cols: 3 },
+  //   childrenStringGrid,
+  // ),
+  // drawGrids(
+  //   [Fneg.NW, Fneg.SW, Fpos.SW, Fpos.NW],
+  //   { rows: 1, cols: 3 },
+  //   childrenStringGrid,
+  // ),
+  // drawGrids(
+  //   [Fneg.NE, Fneg.SE, Fpos.SE, Fpos.NE],
+  //   { rows: 1, cols: 3 },
+  //   childrenStringGrid,
+  // ),
 );
 
 // ─────────────────────────────────────────────
@@ -576,15 +526,17 @@ const surfaceSvg = svg(
 
 fs.mkdirSync("scrap/svgs", { recursive: true });
 
-fs.writeFileSync("scrap/svgs/circle4.svg", surfaceSvg);
+fs.writeFileSync("scrap/svgs/circle5.svg", surfaceSvg);
 
-console.log("Generated scrap/svgs/circle4.svg");
+console.log("Generated scrap/svgs/circle5.svg");
 
 console.log(
   findCenter([
-    findCenter([Fneg.NW, Fneg.SW, Fpos.SW, Fpos.NW]),
-    findCenter([Fneg.SW, Fneg.SE, Fpos.SE, Fpos.SW]),
     findCenter([Fneg.NW, Fneg.NE, Fpos.NE, Fpos.NW]),
+    findCenter([Fneg.SW, Fneg.SE, Fpos.SE, Fpos.SW]),
+    findCenter([Fneg.NW, Fneg.SW, Fpos.SW, Fpos.NW]),
     findCenter([Fneg.NE, Fneg.SE, Fpos.SE, Fpos.NE]),
   ]),
 );
+console.log(Fneg.NE);
+console.log(Fpos.NE);

@@ -1,0 +1,49 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="600"
+    height="600"
+    viewBox="90 30 600 600"
+>
+    <rect id="trigger" x="90" y="30" width="600" height="600" fill="#ffffff"/>
+    
+    <polygon
+      
+      points="320,280 440,280 440,400 320,400"
+      fill="none"
+      stroke="black"
+      stroke-width="3"
+      stroke-linejoin="round"
+    ><animateTransform
+  attributeName="transform"
+  type="rotate"
+  from="0 380 340"
+  to="-360 380 340"
+  dur="20s"
+  begin="0s; trigger.click"
+  fill="freeze"
+/>
+
+
+    </polygon>
+  
+    <polygon
+      
+      points="300,300 420,300 420,420 300,420"
+      fill="none"
+      stroke="black"
+      stroke-width="3"
+      stroke-linejoin="round"
+    ><animateTransform
+  attributeName="transform"
+  type="rotate"
+  from="0 360 360"
+  to="-360 360 360"
+  dur="20s"
+  begin="0s; trigger.click"
+  fill="freeze"
+/>
+
+
+    </polygon>
+  
+</svg>

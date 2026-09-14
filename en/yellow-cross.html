@@ -1,0 +1,299 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>The Yellow Cross — Beginner's Rubik's Cube Method</title>
+
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="../assets/css/animation.css" />
+    <link rel="stylesheet" href="../assets/css/flag-icons.css" />
+
+    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/theme.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="../assets/js/roofpig_and_three.min.js"></script>
+  </head>
+
+  <body>
+    <header id="header">
+      <h1>The Yellow Cross</h1>
+
+      <div class="theme-switcher">
+        <button
+          type="button"
+          class="theme-button theme-default"
+          data-theme="default"
+          aria-label="Default theme"
+          title="Default theme"
+        ></button>
+
+        <button
+          type="button"
+          class="theme-button theme-warm"
+          data-theme="warm"
+          aria-label="Warm theme"
+          title="Warm theme"
+        ></button>
+
+        <button
+          type="button"
+          class="theme-button theme-forest"
+          data-theme="forest"
+          aria-label="Forest theme"
+          title="Forest theme"
+        ></button>
+      </div>
+
+      <a
+        href="../tr/yellow-cross.html"
+        class="fib fi-tr language-flag"
+        aria-label="Türkçe"
+        title="Türkçe"
+      ></a>
+    </header>
+
+    <main>
+      <nav class="step-navigation">
+        <a
+          href="#header"
+          class="nav-top"
+          title="Go to top"
+          aria-label="Go to top"
+          >↑</a
+        >
+        <a href="introduction.html" class="nav-introduction">Introduction</a>
+        <a href="white-cross.html">White Cross</a>
+        <a href="white-corners.html">White Corners</a>
+        <a href="second-layer.html">Second Layer</a>
+        <a href="yellow-cross.html" class="active">Yellow Cross</a>
+        <a href="yellow-face.html">Yellow Face</a>
+        <a href="yellow-corners.html">Yellow Corners</a>
+        <a href="yellow-edges.html">Yellow Edges</a>
+      </nav>
+      <div class="content">
+        <div class="step left">
+          <div class="step-text">
+            <p>
+              In this step, we will form the yellow cross on the Up face by
+              applying a single algorithm up to three times.
+            </p>
+            <p>
+              After each application, depending on the orientation of the edges
+              on the Up face, we need to orient the cube correctly before
+              applying the algorithm again.
+            </p>
+          </div>
+
+          <div class="step-cubes">
+            <div class="step-cube">
+              <div
+                id="yellow-cross-repeat"
+                class="roofpig custom"
+                style="--w: 300px; --h: 300px; background-color: #b0ccd6"
+                data-config="alg=y y y y|colored=U*- u/e U|hover=none|speed=1500"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <h2>Orienting the Up Face</h2>
+
+        <p>
+          If there are no yellow edges facing up, we can jump straight into the
+          algorithm. If there are two yellow edges, we rotate the cube or the Up
+          face so that:
+        </p>
+
+        <ul>
+          <li>a yellow edge is on the Left face, and</li>
+          <li>a non-yellow edge is on the Front face.</li>
+        </ul>
+
+        <p>
+          The orientation of the corners does not matter. In short, we want our
+          cube to be in one of the orientations below.
+        </p>
+
+        <div class="step-cubes horizontal">
+          <div class="step-cube-titled">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="setupmoves=F U R U' R' F' y F U R U' R' F' F U R U' R' F'|colored=u- u/e U|hover=far|speed=900"
+            ></div>
+            <div class="cube-title">No yellow edges</div>
+          </div>
+
+          <div class="step-cube-titled">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="setupmoves=F U R U' R' F' y F U R U' R' F' y2|colored=u- u/e U|solved= u-|hover=far|speed=900"
+            ></div>
+            <div class="cube-title">
+              Two yellow edges, <br />90-degree angle
+            </div>
+          </div>
+
+          <div class="step-cube-titled">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="setupmoves=F U R U' R' F'|colored=u- u/e U|solved= u-|hover=far|speed=900"
+            ></div>
+            <div class="cube-title">
+              Two yellow edges, <br />180-degree angle
+            </div>
+          </div>
+        </div>
+
+        <p>
+          There are no other possible orientations of the Up face because a
+          legal 3×3 cube has even parity.
+          <sup class="reference" id="ref-call-1"><a href="#ref-1">[1]</a></sup>
+          <sup class="reference" id="ref-call-2"><a href="#ref-2">[2]</a></sup>
+        </p>
+
+        <!--
+      <h3>Two Yellow Edges Are Facing Up</h3>
+      <p>
+        In this case, the two edges can either form a 90-degree angle or a
+        180-degree angle.
+      </p>
+
+      <h3>Edges Form a 90-Degree Angle</h3>
+
+      <div class="step">
+        <div class="step-text">
+          <p>
+            If the two edges form a 90-degree angle, we rotate the cube or the
+            Up face so that the angle lies between the Left and Back faces.
+          </p>
+          <p>
+            In the example on the right, the 90-degree angle is indicated by the
+            marked corner.
+          </p>
+        </div>
+
+        <div class="step-cubes">
+          <div class="step-cube">
+            <div
+              class="roofpig custom"
+              style="--w: 300px; --h: 300px"
+              data-config="colored=u- U Ul Ub|tweaks=x:Ubl|solved=Ubl|hover=none|speed=900"
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Edges Form a 180-Degree Angle</h3>
+
+      <div class="step">
+        <div class="step-text">
+          <p>
+            If the two edges form a 180-degree angle, we rotate the cube or the
+            Up face so that they lie on the Right and Left faces.
+          </p>
+        </div>
+
+        <div class="step-cubes">
+          <div class="step-cube">
+            <div
+              class="roofpig custom"
+              style="--w: 300px; --h: 300px"
+              data-config="colored=u- U Ur Ul|hover=none|speed=900"
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Three Yellow Edges Are Facing Up</h3>
+
+      <div class="step">
+        <div class="step-text">
+          <p>
+            If there are three yellow edges facing up, we rotate the cube or the
+            Up face so that the non-yellow edge is on the Front face.
+          </p>
+        </div>
+
+        <div class="step-cubes">
+          <div class="step-cube">
+            <div
+              class="roofpig custom"
+              style="--w: 300px; --h: 300px"
+              data-config="colored=u- U Ub Ur Ul|hover=none|speed=900"
+            ></div>
+          </div>
+        </div>
+      </div>
+      -->
+
+        <h2>Algorithm: F U R&nbsp;&nbsp;&nbsp;U' R' F'</h2>
+
+        <p>
+          After orienting the cube as described above, we can apply the
+          algorithm. Remember, the orientation of the corners doesn't matter.
+        </p>
+
+        <div class="step">
+          <div class="step-text">
+            <p>
+              We may need to apply the algorithm up to three times, reorienting
+              the cube between applications as necessary.
+            </p>
+
+            <p style="text-align: center">F U R&nbsp;&nbsp;&nbsp;U' R' F'.</p>
+          </div>
+
+          <div class="step-cubes">
+            <div class="step-cube">
+              <div
+                class="roofpig custom"
+                style="--w: 300px; --h: 300px"
+                data-config="setupmoves=F U R U' R' F' y F U R U' R' F' F U R U' R' F' y' F U R U' R' F' y F U R U' R' F' F U R U' R' F'|alg=F U R U' R' F' y F U R U' R' F' F U R U' R' F'|flags=showalg|colored=u- u/e U|hover=far|speed=900"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          We can remember the yellow cross algorithm with the mnemonic: FUR says
+          U' R' F!
+        </p>
+
+        <h4>References</h4>
+
+        <ol class="references">
+          <li id="ref-1">
+            <span class="mw-backlink"><a href="#ref-call-1">^ </a></span>
+            <a href="https://web.mit.edu/sp.268/www/rubik.pdf">
+              The Mathematics of the Rubik’s Cube </a
+            >. <em>web.mit.edu</em>. p. 7.
+          </li>
+
+          <li id="ref-2">
+            <span class="mw-backlink"><a href="#ref-call-2">^ </a></span>
+            Ryan Heise (2007).
+            <a href="https://www.ryanheise.com/cube/cube_laws.html">
+              Laws of the cube </a
+            >. <em>ryanheise.com</em>.
+          </li>
+        </ol>
+      </div>
+    </main>
+
+    <footer>
+      <div style="text-align: right">
+        <a href="https://github.com/GaloisField17/cube" style="color: pink">
+          GitHub
+        </a>
+      </div>
+    </footer>
+
+    <script src="../assets/js/cubes.js"></script>
+  </body>
+</html>

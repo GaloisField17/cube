@@ -1,0 +1,300 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script>
+      const theme = localStorage.getItem("theme") || "dark";
+      document.documentElement.dataset.theme = theme;
+    </script>
+
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="../assets/css/animation.css" />
+    <link rel="stylesheet" href="../assets/css/flag-icons.css" />
+
+    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/theme.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="../assets/js/roofpig_and_three.min.js"></script>
+    <title>3×3 Rubik Küpünü Çözmek İçin Başlangıç Yöntemi</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>3×3 Rubik Küpünü Çözmek İçin Başlangıç Yöntemi</h1>
+
+      <div class="theme-switcher">
+        <button
+          type="button"
+          class="theme-button theme-default"
+          data-theme="default"
+          aria-label="Varsayılan tema"
+          title="Varsayılan tema"
+        ></button>
+
+        <button
+          type="button"
+          class="theme-button theme-warm"
+          data-theme="warm"
+          aria-label="Sıcak tema"
+          title="Sıcak tema"
+        ></button>
+
+        <button
+          type="button"
+          class="theme-button theme-forest"
+          data-theme="forest"
+          aria-label="Orman teması"
+          title="Orman teması"
+        ></button>
+      </div>
+
+      <a
+        href="../en/introduction.html"
+        class="fib fi-gb language-flag"
+        aria-label="English"
+        title="English"
+      ></a>
+    </header>
+
+    <main>
+      <div class="content">
+        <p>
+          Bu eğitimde, 3×3 küpü basit teknikler ve algoritmalar kullanarak
+          çözmek için başlangıç seviyesine uygun bir yöntem kullanacağız.
+          Önceden herhangi bir deneyime sahip olmanız gerekmez. Eğitimde,
+          <a
+            href="https://github.com/larspetrus/Roofpig"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Roofpig</a
+          >
+          tarafından desteklenen etkileşimli küp animasyonlarının yanı sıra,
+          hamleleri ve dönüşleri göstermek için çizimler de bulunmaktadır.
+        </p>
+        <p>Küpü birlikte yedi adımda çözeceğiz:</p>
+
+        <div class="step right centered">
+          <div class="step-text">
+            <ol>
+              <li><a href="white-cross.html">Beyaz Artı</a></li>
+              <li><a href="white-corners.html">Beyaz Köşeler</a></li>
+              <li><a href="second-layer.html">İkinci Katman</a></li>
+              <li><a href="yellow-cross.html">Sarı Artı</a></li>
+              <li><a href="yellow-face.html">Sarı Yüz</a></li>
+              <li><a href="yellow-corners.html">Sarı Köşeler</a></li>
+              <li><a href="yellow-edges.html">Sarı Kenarlar</a></li>
+            </ol>
+          </div>
+          <div class="step-cubes">
+            <div class="step-cube">
+              <div
+                id="intro-cube-repeat"
+                class="roofpig"
+                style="width: 200px; height: 200px"
+                data-config="setupmoves=|alg=y y y y x x x x|hover=none|speed=1200"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Küpü çözmeye başlamadan önce, eğitim boyunca kullanılacak bazı temel
+          gösterim ve terimleri inceleyeceğiz.
+        </p>
+
+        <h1>Gösterim</h1>
+
+        <p>
+          Standart bir 3×3 küpün 3 katmanı ve 6 yüzü vardır. Çözülmüş bir küp,
+          her yüzünün tek bir renkten oluştuğu durumdur: kırmızı, yeşil,
+          turuncu, mavi, beyaz veya sarı.
+        </p>
+
+        <p>
+          Küp, görülebilen 26 küçük küp parçasından oluşur. Bunlar merkez
+          parçaları, kenar parçaları veya köşe parçaları olarak
+          sınıflandırılabilir. Her parça türünün yanı sıra katmanların, yüzlerin
+          ve hamlelerin de açık ve birbirinden ayırt edilebilir isimleri vardır.
+        </p>
+
+        <h2>Katmanlar</h2>
+
+        <p>
+          Katmanlar, küpün yatay seviyeleridir. Bunlara
+          <strong>alt katman</strong>, <strong>orta katman</strong> ve
+          <strong>üst katman</strong> denir. Her katmanı oluşturan parçalar,
+          küpün yönüne bağlıdır.
+        </p>
+
+        <div class="step-cubes horizontal">
+          <div class="step-cube-titled">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="colored=D*|flags=canvas|hover=none"
+            ></div>
+            <div class="cube-title">Alt katman</div>
+          </div>
+
+          <div class="step-cube-titled">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="colored=UD*-|flags=canvas|hover=none"
+            ></div>
+            <div class="cube-title">Orta katman</div>
+          </div>
+
+          <div class="step-cube-titled">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="colored=U*|flags=canvas|hover=none"
+            ></div>
+            <div class="cube-title">Üst katman</div>
+          </div>
+        </div>
+
+        <h2>Parçalar</h2>
+
+        <p>
+          Küp toplam 27 küçük parçadan oluşur. Küp topluluklarında bu parçalar
+          <em>cubie</em> olarak da adlandırılır. Bu eğitimde ise bunlardan
+          basitçe <em>parçalar</em> olarak bahsedeceğiz. 27 parçanın 26'sı
+          görünür durumdadır. Görünen her parça <strong>merkez parçası</strong>,
+          <strong>köşe parçası</strong> veya <strong>kenar parçası</strong>
+          olabilir. Her parça, türü ve renkleriyle tanımlanır.
+        </p>
+
+        <div class="step-cubes horizontal">
+          <div class="step-cube-titled">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="colored=U F R B L D|flags=canvas|hover=none"
+            ></div>
+            <div class="cube-title">Merkez parçaları</div>
+          </div>
+
+          <div class="step-cube-titled">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="colored=*/c|flags=canvas|hover=none|"
+            ></div>
+            <div class="cube-title">Köşe parçaları</div>
+          </div>
+
+          <div class="step-cube-titled">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="colored=*/e|flags=canvas|hover=none|"
+            ></div>
+            <div class="cube-title">Kenar parçaları</div>
+          </div>
+        </div>
+
+        <p>
+          Geriye kalan bileşen, diğer parçaları bir arada tutan ve dönmelerine
+          olanak sağlayan küpün çekirdeğidir.
+        </p>
+
+        <p>
+          Bir parçanın <strong>yüzey karesi</strong> (<em>facelet</em>), o
+          parçanın yüzündeki tek bir renkli karedir. Köşe parçalarının üç, kenar
+          parçalarının iki ve merkez parçalarının bir yüzey karesi vardır.
+        </p>
+
+        <h2>Yüzler</h2>
+
+        <p>
+          Bir <strong>yüz</strong>, küpün bir tarafının tamamını kaplayan parça
+          grubudur. Yüzleri bize göre konumlarına göre adlandırırız: Ön (F),
+          Arka (B), Sağ (R), Sol (L), Üst (U) ve Alt (D). Her yüzün 3×3 alanını
+          kaplayan dokuz parçası vardır: dört köşe parçası, dört kenar parçası
+          ve bir merkez parçası. Aşağıdaki çizimlerde ilgili yüz renkle
+          vurgulanmıştır.
+        </p>
+
+        <div class="step-cubes horizontal">
+          <div class="step-cube-titled">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="colored=F*|flags=canvas|hover=far|"
+            ></div>
+            <div class="cube-title">F, Ön yüz</div>
+          </div>
+
+          <div class="step-cube-titled">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="colored=U*|flags=canvas|hover=far|"
+            ></div>
+            <div class="cube-title">U, Üst yüz</div>
+          </div>
+
+          <div class="step-cube-titled">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="colored=R*|flags=canvas|hover=far|"
+            ></div>
+            <div class="cube-title">R, Sağ yüz</div>
+          </div>
+        </div>
+
+        <div class="step-cubes horizontal">
+          <div class="step-cube-titled">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="colored=B*|flags=canvas|hover=far|"
+            ></div>
+            <div class="cube-title">B, Arka yüz</div>
+          </div>
+
+          <div class="step-cube-titled">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="colored=D*|flags=canvas|hover=far|"
+            ></div>
+            <div class="cube-title">D, Alt yüz</div>
+          </div>
+
+          <div class="step-cube-titled">
+            <div
+              class="roofpig custom"
+              style="--w: 200px; --h: 200px; background-color: #b0ccd6"
+              data-config="colored=L*|flags=canvas|hover=far|"
+            ></div>
+            <div class="cube-title">L, Sol yüz</div>
+          </div>
+        </div>
+
+        <p>
+          Bu isimler küpün yönüne göredir; dolayısıyla küp döndürüldüğünde aynı
+          isimler farklı fiziksel yüzleri ifade edebilir.
+        </p>
+
+        <h2>Hamleler</h2>
+      </div>
+    </main>
+
+    <footer>
+      <div style="text-align: right">
+        <a href="https://github.com/GaloisField17/cube" style="color: pink">
+          GitHub
+        </a>
+      </div>
+    </footer>
+
+    <script src="../assets/js/cubes.js"></script>
+  </body>
+</html>

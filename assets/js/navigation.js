@@ -1,37 +1,47 @@
-const navigation = document.querySelector(".step-navigation");
+document.addEventListener("DOMContentLoaded", () => {
+  const navigation = document.querySelector(".step-navigation");
 
-if (navigation) {
+  if (!navigation) {
+    return;
+  }
+
   let lastScrollY = window.scrollY;
-  const scrollThreshold = 10;
+  let ticking = false;
+
+  function updateNavigation() {
+    const currentScrollY = window.scrollY;
+
+    // At the very top, always show the navigation.
+    if (currentScrollY <= 10) {
+      navigation.classList.remove("nav-hidden");
+      navigation.classList.add("nav-visible");
+    }
+    // Scrolling down.
+    else if (currentScrollY > lastScrollY) {
+      navigation.classList.remove("nav-visible");
+      navigation.classList.add("nav-hidden");
+    }
+    // Scrolling up.
+    else if (currentScrollY < lastScrollY) {
+      navigation.classList.remove("nav-hidden");
+      navigation.classList.add("nav-visible");
+    }
+
+    lastScrollY = currentScrollY;
+    ticking = false;
+  }
 
   window.addEventListener(
     "scroll",
-    function () {
-      const currentScrollY = window.scrollY;
-      const scrollDifference = currentScrollY - lastScrollY;
-
-      if (currentScrollY <= 0) {
-        navigation.classList.remove("nav-hidden");
-        navigation.classList.add("nav-visible");
-
-        lastScrollY = currentScrollY;
-        return;
+    () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateNavigation);
+        ticking = true;
       }
-
-      if (Math.abs(scrollDifference) < scrollThreshold) {
-        return;
-      }
-
-      if (scrollDifference < 0) {
-        navigation.classList.remove("nav-hidden");
-        navigation.classList.add("nav-visible");
-      } else {
-        navigation.classList.remove("nav-visible");
-        navigation.classList.add("nav-hidden");
-      }
-
-      lastScrollY = currentScrollY;
     },
     { passive: true },
   );
-}
+
+  // Set the initial state.
+  updateNavigation();
+});
